@@ -5,4 +5,3 @@ E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.p
 E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.Classes.CustomForm.resources
 E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.csproj.GenerateResource.Cache
 E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\bin\Debug\BanHangLibraries.dll.config
-E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.csprojResolveAssemblyReference.cache

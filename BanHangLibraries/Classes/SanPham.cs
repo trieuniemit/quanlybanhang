@@ -20,7 +20,7 @@ namespace BanHangLibraries.Classes
 
           public SanPham() {}
 
-        public SanPham(string id, string name, int cat_id, int price, string unit, int status = 1, int count = 1, string created_at = "") {
+        public SanPham(string id, string name, int cat_id, int price, string unit, int status = 1, int count = 1, string created_at = "", int promo_price = 0) {
             Id = id;
             Name = name;
             Cat_id = cat_id;
@@ -29,6 +29,7 @@ namespace BanHangLibraries.Classes
             Status = status;
             Count = count;
             Created_at = created_at;
+            Promo_price = promo_price;
         }
     }
 }
