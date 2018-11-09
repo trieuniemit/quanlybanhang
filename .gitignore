@@ -1,1 +1,5 @@
 ./QuanLyBanHang/App.config
+./QuanLyBanHang/bin
+./QuanLyBanHang/obj
+./BanHangLibraries/bin
+./BanHangLibraries/obj
