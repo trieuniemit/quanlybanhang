@@ -29,12 +29,16 @@ namespace QuanLyBanHang
             loginForm = lg;
         }
       
+        public MainForm() {
+            InitializeComponent();
+        }
+
         private void MainForm_Load(object sender, EventArgs e) {
             
         }
 
         private void DrawBackground(Object sender, PaintEventArgs e) {
-            Helpers.Gradient(e.Graphics, Width, Height, Color.Tomato, Color.White, 90f);
+            Helper.Gradient(e.Graphics, Width, Height, Color.ForestGreen, Color.Green, 90f);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

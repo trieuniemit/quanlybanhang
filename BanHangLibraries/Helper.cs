@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
+using System.Globalization;
 
 /**
  * 
@@ -20,7 +21,7 @@ using System.Security.Cryptography;
 
 namespace BanHangLibraries
 {
-    public class Helpers
+    public class Helper
     {
         public static SqlConnection SqlCnn = new SqlConnection(ConfigurationManager.AppSettings["sqlConnectString"]);
 
@@ -40,6 +41,11 @@ namespace BanHangLibraries
              hash.Append(bytes[i].ToString("x2"));
            }
            return hash.ToString();
+        }
+
+        public static string CurrencyFormat(string currency) {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            return double.Parse(currency).ToString("#,###", cul.NumberFormat) + "đ";
         }
     }
 }

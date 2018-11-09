@@ -42,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\BanHangBUL.cs" />
+    <Compile Include="BanHang\BanHangDAL.cs" />
     <Compile Include="Classes\CustomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helpers.cs" />
+    <Compile Include="Classes\SanPham.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Loginer\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

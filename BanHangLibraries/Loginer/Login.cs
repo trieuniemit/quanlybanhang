@@ -20,13 +20,13 @@ namespace BanHangLibraries.Loginer
     public class LoginDAL {
 
         public bool CheckLogin(string username, string password) {
-            SqlCommand checkLoginCmd = new SqlCommand("SELECT COUNT(*) FROM users WHERE username = @user AND password = @pwd", Helpers.SqlCnn);
+            SqlCommand checkLoginCmd = new SqlCommand("SELECT COUNT(*) FROM users WHERE username = @user AND password = @pwd", Helper.SqlCnn);
             checkLoginCmd.Parameters.AddWithValue("user", username);
             checkLoginCmd.Parameters.AddWithValue("pwd", password);
 
-            Helpers.SqlCnn.Open();
+            Helper.SqlCnn.Open();
             int check = int.Parse(checkLoginCmd.ExecuteScalar().ToString());
-            Helpers.SqlCnn.Close();
+            Helper.SqlCnn.Close();
 
             return check > 0 ? true:false;
         }

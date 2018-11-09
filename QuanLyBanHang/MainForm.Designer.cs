@@ -80,7 +80,7 @@ namespace QuanLyBanHang
             // 
             // btnCaNhan
             // 
-            this.btnCaNhan.Location = new System.Drawing.Point(47, 198);
+            this.btnCaNhan.Location = new System.Drawing.Point(58, 89);
             this.btnCaNhan.Name = "btnCaNhan";
             this.btnCaNhan.Size = new System.Drawing.Size(126, 48);
             this.btnCaNhan.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace QuanLyBanHang
             // 
             // btnDoiMatKhau
             // 
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(251, 198);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(242, 89);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(126, 48);
             this.btnDoiMatKhau.TabIndex = 5;
@@ -100,7 +100,7 @@ namespace QuanLyBanHang
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(476, 198);
+            this.btnThoat.Location = new System.Drawing.Point(466, 89);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(126, 48);
             this.btnThoat.TabIndex = 6;

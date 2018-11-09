@@ -43,7 +43,7 @@ namespace QuanLyBanHang
         }
         
         private void DrawBackground(Object sender, PaintEventArgs e) {
-            Helpers.Gradient(e.Graphics, Width, Height, Color.RoyalBlue, Color.Transparent, 90f);
+            Helper.Gradient(e.Graphics, Width, Height, Color.RoyalBlue, Color.Transparent, 90f);
         }
 
         private void pbClose_Click(object sender, EventArgs e) {
