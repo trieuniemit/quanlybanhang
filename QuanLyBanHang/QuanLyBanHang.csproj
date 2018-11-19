@@ -32,8 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BanHangLibraries">
-      <HintPath>..\BanHangLibraries\bin\Debug\BanHangLibraries.dll</HintPath>
+    <Reference Include="QUanLyBanHangBULs">
+      <HintPath>..\QuanLyBanHangBULs\bin\Debug\QUanLyBanHangBULs.dll</HintPath>
+    </Reference>
+    <Reference Include="QuanLyBanHangDTOs">
+      <HintPath>..\QuanLyBanHangDTOs\bin\Debug\QuanLyBanHangDTOs.dll</HintPath>
+    </Reference>
+    <Reference Include="QuanLyBanHangLibraries">
+      <HintPath>..\QuanLyBanHangLibraries\bin\Debug\QuanLyBanHangLibraries.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -111,6 +117,9 @@
     <EmbeddedResource Include="Forms\BanHangForm.resx">
       <DependentUpon>BanHangForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyNhanVienForm.resx">
+      <DependentUpon>QuanLyNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,7 +145,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\product_cart_64.png" />
+    <None Include="Resources\shopping-cart-64.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\close-tab.png" />
+    <None Include="Resources\close-tab1.png" />
     <Content Include="Resources\icon-close.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\remove1.png" />
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

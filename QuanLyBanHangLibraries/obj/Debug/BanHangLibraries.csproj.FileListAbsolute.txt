@@ -1,0 +1,7 @@
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\bin\Debug\BanHangLibraries.dll.config
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\bin\Debug\BanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\bin\Debug\BanHangLibraries.pdb
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.DTOClasses.CustomForm.resources
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.csproj.GenerateResource.Cache
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\BanHangLibraries\obj\Debug\BanHangLibraries.pdb

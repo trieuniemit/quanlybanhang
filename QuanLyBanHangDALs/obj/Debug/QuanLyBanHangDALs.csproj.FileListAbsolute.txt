@@ -1,0 +1,10 @@
+E:\Projects\Winforms\QuanLyBanHang\BanHangDALs\obj\Debug\QuanLyBanHangDALs.csprojResolveAssemblyReference.cache
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.csprojResolveAssemblyReference.cache
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangDALs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangDALs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangDTOs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangLibraries.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.pdb

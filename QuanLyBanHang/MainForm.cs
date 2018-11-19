@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BanHangLibraries;
+using QuanLyBanHangLibraries;
 
 /**
  * 
@@ -20,72 +20,100 @@ using BanHangLibraries;
 namespace QuanLyBanHang
 {
     public partial class MainForm : Form {
-        LoginForm loginForm;
 
-        public MainForm(LoginForm lg) {
-            InitializeComponent();
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawBackground);
+        private Image CloseTab, CloseTabActive;
 
-            loginForm = lg;
-        }
-      
         public MainForm() {
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
+            Helper.CurrentUserId = 1;
+
+            //add event
+            this.tabMain.DrawMode = TabDrawMode.OwnerDrawFixed;
+            this.tabMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabMain_DrawItem);
+
+            //load image
+            Size imageSize = new Size(20,20);
+            Bitmap imgBitmap = new Bitmap(Properties.Resources.close_tab2, imageSize);
+            Bitmap imgBitmapActive = new Bitmap(Properties.Resources.close_tab, imageSize);
+
+            CloseTab = imgBitmap;
+            CloseTabActive = imgBitmapActive;
+            tabMain.Padding = new Point(40);
+
+        }
+
+
+        private void AddNewTab(Form frm) {
+            TabPage newTabPage = new TabPage(frm.Text.Trim());
+
+            //setting form
+            frm.TopLevel = false;
+            frm.Parent = newTabPage;
             
-        }
+            //add new tab add switch to new tab
+            tabMain.TabPages.Add(newTabPage);
+            tabMain.SelectedTab = tabMain.TabPages[tabMain.TabCount - 1];
 
-        private void DrawBackground(Object sender, PaintEventArgs e) {
-            Helper.Gradient(e.Graphics, Width, Height, Color.ForestGreen, Color.Green, 90f);
-        }
+            //show form
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        } 
+
+
+        private void tabMain_DrawItem(object sender, DrawItemEventArgs e)
         {
-            loginForm.Show();
-            this.Close();
+            Rectangle rect = tabMain.GetTabRect(e.Index);
+            Rectangle imageRect = new Rectangle(rect.Right - CloseTab.Width, rect.Top+(rect.Height-CloseTab.Height)/2, CloseTab.Width, CloseTab.Height);
+            //resize rect
+            rect.Size = new Size(rect.Width+24, 38);
+
+            //string style for header
+            Font tabHeaderFont;
+            StringFormat tabStringFormat = new StringFormat(StringFormat.GenericDefault);
+            
+            //drow tab header
+            if(tabMain.SelectedTab == tabMain.TabPages[e.Index]) {
+                 //set background
+                e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+
+                //draw icon
+                e.Graphics.DrawImage(CloseTabActive, imageRect);
+                tabHeaderFont = new Font("Arial", 12, FontStyle.Bold);
+               
+                //draw text
+                e.Graphics.DrawString(tabMain.TabPages[e.Index].Text, tabHeaderFont, Brushes.Black, rect, tabStringFormat);
+            } else {
+                 //set background
+                e.Graphics.FillRectangle(new SolidBrush(Color.WhiteSmoke), e.Bounds);
+
+                 //draw icon
+                e.Graphics.DrawImage(CloseTab, imageRect);
+                tabHeaderFont = new Font("Arial", 12, FontStyle.Regular);
+
+                //draw text
+                e.Graphics.DrawString(tabMain.TabPages[e.Index].Text, tabHeaderFont, Brushes.Black, rect, tabStringFormat);
+            }
+
         }
 
-        private void btnBanHang_Click(object sender, EventArgs e)
-        {
-            Forms.BanHangForm banHangForm = new Forms.BanHangForm();
-            banHangForm.Show();
+        //close tab
+        private void tabMain_MouseClick(object sender, MouseEventArgs e) {
+            for(int i = 0; i < tabMain.TabCount; i++) {
+                Rectangle rect = tabMain.GetTabRect(i);
+                Rectangle imageRect = new Rectangle(rect.Right - CloseTab.Width, rect.Top+(rect.Height-CloseTab.Height)/2, CloseTab.Width, CloseTab.Height);
+
+                if(imageRect.Contains(e.Location))
+                    tabMain.TabPages.Remove(tabMain.SelectedTab);
+            }
         }
 
-        private void btnSanPham_Click(object sender, EventArgs e)
-        {
-            Forms.QuanLyLoaiSanPhamForm sanPhamForm = new Forms.QuanLyLoaiSanPhamForm();
-            sanPhamForm.Show();
-        }
-
-        private void btnLoaiSanPham_Click(object sender, EventArgs e)
-        {
-            Forms.QuanLyLoaiSanPhamForm loaiSanPhamForm = new Forms.QuanLyLoaiSanPhamForm();
-            loaiSanPhamForm.Show();
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            Forms.ThongKeForm thongKeForm = new Forms.ThongKeForm();
-            thongKeForm.Show();
-        }
-
-        private void btnCaNhan_Click(object sender, EventArgs e)
-        {
-            Forms.ThongTinCaNhanForm thongTinCaNhanForm = new Forms.ThongTinCaNhanForm();
-            thongTinCaNhanForm.Show();
-        }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
-        {
-            Forms.ThongTinCaNhanForm thongTinCaNhanForm = new Forms.ThongTinCaNhanForm();
-            thongTinCaNhanForm.Show();
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        //Open Ban Hang form
+        private void ptbBanHang_Click_lbBanHang_Click(object sender, EventArgs e) {
+            AddNewTab(new Forms.BanHangForm());
         }
 
     }

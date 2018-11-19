@@ -1,0 +1,8 @@
+E:\Projects\Winforms\QuanLyBanHang\BanHangDTOs\bin\Debug\BanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\BanHangDTOs\bin\Debug\BanHangDTOs.pdb
+E:\Projects\Winforms\QuanLyBanHang\BanHangDTOs\obj\Debug\BanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\BanHangDTOs\obj\Debug\BanHangDTOs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDTOs\bin\Debug\QuanLyBanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDTOs\bin\Debug\QuanLyBanHangDTOs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDTOs\obj\Debug\QuanLyBanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDTOs\obj\Debug\QuanLyBanHangDTOs.pdb

@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//custom libraries
-using BanHangLibraries.Classes;
-using BanHangLibraries;
-using BanHangLibraries.Loginer;
+using QuanLyBanHangLibraries;
+using QuanLyBanHangLibraries.Classes;
+using QuanLyBanHangBULs;
+using System.Drawing;
 
 /**
  * 
@@ -22,7 +15,7 @@ using BanHangLibraries.Loginer;
 
 namespace QuanLyBanHang
 {
-    public partial class LoginForm : CustomForm
+    public partial class LoginForm : FormNoneHeader
     {
         LoginBUL loginBul = new LoginBUL();
 
@@ -32,7 +25,7 @@ namespace QuanLyBanHang
         
         private void OpenMainForm() {
             this.Hide();
-            MainForm mainForm = new MainForm(this);
+            MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             this.Close();
         }

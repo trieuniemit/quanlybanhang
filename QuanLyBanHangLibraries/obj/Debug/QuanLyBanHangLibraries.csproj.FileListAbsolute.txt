@@ -1,0 +1,7 @@
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\obj\Debug\QuanLyBanHangLibraries.csproj.GenerateResource.Cache
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\bin\Debug\QuanLyBanHangLibraries.dll.config
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\bin\Debug\QuanLyBanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\bin\Debug\QuanLyBanHangLibraries.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\obj\Debug\QuanLyBanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\obj\Debug\QuanLyBanHangLibraries.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangLibraries\obj\Debug\QuanLyBanHangLibraries.Classes.FormNoneHeader.resources

@@ -7,7 +7,14 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Propert
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csproj.GenerateResource.Cache
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.exe
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
-E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\BanHangLibraries.dll
-E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\BanHangLibraries.pdb
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.LoginForm.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.BanHangForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.QuanLyNhanVienForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QUanLyBanHangBULs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangDTOs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangLibraries.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangDALs.dll
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QUanLyBanHangBULs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangDTOs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangLibraries.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\bin\Debug\QuanLyBanHangDALs.pdb
