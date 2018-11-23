@@ -1,5 +1,6 @@
 ﻿using System;
 using QuanLyBanHangDALs;
+using QuanLyBanHangDTOs;
 
 namespace QuanLyBanHangBULs
 {
@@ -7,7 +8,7 @@ namespace QuanLyBanHangBULs
 
         LoginDAL loginDal = new LoginDAL();
 
-        public bool CheckLogin(string username = "", string password = "") {
+        public User CheckLogin(string username = "", string password = "") {
             return loginDal.CheckLogin(username, password);
         }
 

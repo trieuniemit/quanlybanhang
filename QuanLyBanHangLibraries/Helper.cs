@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Globalization;
 
 /**
@@ -49,6 +50,30 @@ namespace QuanLyBanHangLibraries
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             string rt = double.Parse(currency).ToString("#,###", cul.NumberFormat);
             return (rt == "" ? "0" : rt) + "đ";
+        }
+
+        public static string GetDateNow(string format = "dd.MM.yyyy HH:mm:ss") {
+            return DateTime.Now.ToString(format);
+        }
+
+        public static int ConvertToInt(string str) {
+            string convert = Regex.Replace(str, "[^0-9]", "");
+            convert = (convert=="" || convert == null)?"0" : convert;
+            return int.Parse(convert);
+        }
+
+        public static string GetUserRole(int role) {
+            string roleName = "";
+            switch(role) {
+                case 1: 
+                    roleName = "Quản lý";
+                    break;
+                case 2: 
+                    roleName = "Nhân viên";
+                    break;
+            }
+
+            return roleName;
         }
 
     }

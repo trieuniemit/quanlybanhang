@@ -23,7 +23,6 @@ namespace QuanLyBanHangBULs {
 
         public SanPham CheckProduct(string product_id) {
             SanPham sp = BanHangDal.CheckProduct(product_id);
-                //MessageBox.Show("Mã sản phẩm không chính xác!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return sp;
         }
 
@@ -36,18 +35,9 @@ namespace QuanLyBanHangBULs {
             return total;
         }
 
-        public void SaveOrderAndExportData(List<SanPham> products, Order order, bool isExport) {
+        public bool SaveOrderAndExportData(List<SanPham> products, Order order) {
             //call to save to database method
-            BanHangDal.SaveOrderToDatbase(products, order);
-
-            //call to method export
-            if(isExport) 
-                ExportToPdf(products, order);
-        }
-
-        private void ExportToPdf(List<SanPham> products, Order order) {
-            CreateReport report = new CreateReport(products, order);
-            report.Show();
+            return BanHangDal.SaveOrderToDatbase(products, order);
         }
 
     }

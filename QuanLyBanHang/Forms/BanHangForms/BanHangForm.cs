@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 using QuanLyBanHangDTOs;
 using QuanLyBanHangBULs;
 using QuanLyBanHangLibraries;
@@ -28,9 +27,11 @@ namespace QuanLyBanHang.Forms
 
         private List<SanPham> ListProduct = new List<SanPham>();
         private BanHangBUL BanHangBul = new BanHangBUL();
+        private User CurrentUser;
 
-        public BanHangForm() {
+        public BanHangForm(User user) {
             InitializeComponent();
+            CurrentUser = user;
         }
 
         private void BanHangForm_Load(object sender, EventArgs e) {
@@ -101,18 +102,18 @@ namespace QuanLyBanHang.Forms
 
                 //clear text box
                 tbMaSanPham.Text = "";
+            } else {
+                MessageBox.Show("Mã sản phẩm không chính xác!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void tbTienGui_LostFocus(object sender, EventArgs e) {
             TextBox Tb = (TextBox)sender;
-            string Currency = Regex.Replace(Tb.Text, "[^0-9]", "");
-            Currency = (Currency=="" || Currency == null)?"0" : Currency;
+            int Currency = Helper.ConvertToInt(Tb.Text);
+            int Total = Helper.ConvertToInt(tbTotal.Text);
 
-            string Total = Regex.Replace(tbTotal.Text, "[^0-9]", "");
-
-            tbTienGui.Text = Helper.CurrencyFormat(Currency);
-            int _return = int.Parse(Currency) - int.Parse(Total);
+            tbTienGui.Text = Helper.CurrencyFormat(Currency.ToString());
+            int _return = Currency - Total;
 
             if(_return >= 0) {
                 tbTienTra.Text = Helper.CurrencyFormat(_return.ToString());
@@ -135,23 +136,43 @@ namespace QuanLyBanHang.Forms
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            if(ListProduct.Count == 0) {
-                MessageBox.Show("Hãy chọn ít nhất một sản phẩm!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else {
-                int deposits = int.Parse(Regex.Replace(tbTienGui.Text, "[^0-9]", ""));
-                Order order =  new Order(-1, tbKhachHang.Text, tbSoDienThoai.Text, deposits, Helper.CurrentUserId);
+            if(ListProduct.Count == 0)
+                MessageBox.Show("Hãy nhập ít nhất một sản phẩm!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(tbTienGui.Text == "") 
+                MessageBox.Show("Hãy nhập tiền số tiền KH gửi!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(BanHangBul.TotalPrice(ListProduct) > Helper.ConvertToInt(tbTienGui.Text))
+                MessageBox.Show("Số tiền khách hàng trả chưa đủ, hãy thu thêm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else {
+                int deposits = Helper.ConvertToInt(tbTienGui.Text);
+                Order order =  new Order(-1, tbKhachHang.Text, tbSoDienThoai.Text, deposits, CurrentUser.Id, null, Helper.ConvertToInt(tbTotal.Text));
 
                 //call to BUL method
-                BanHangBul.SaveOrderAndExportData(ListProduct, order, cbExport.Checked);
+                bool isSuccess = BanHangBul.SaveOrderAndExportData(ListProduct, order);
 
+                if(!isSuccess) {
+                    MessageBox.Show("Có lỗi trong quá trình lưu dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                //open report viewer if check
+                if(cbExport.Checked)  {
+                    Forms.BanHangForm_InHoaDon InHoaDon = new Forms.BanHangForm_InHoaDon(order, ListProduct, CurrentUser);
+                    InHoaDon.ShowDialog();
+                } else {
+                    MessageBox.Show("Đã lưu dữ liệu của đơn hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                //reset Ban Hang Form
                 tbKhachHang.Text = "";
                 tbSoDienThoai.Text = "";
                 tbTienGui.Text = "0đ";
                 tbTienTra.Text = "0đ";
                 tbTotal.Text = "0đ";
+                order = null;
+                ListProduct.Clear();
+                dgvListProduct.Rows.Clear();
             }
         }
-
 
     }
 }

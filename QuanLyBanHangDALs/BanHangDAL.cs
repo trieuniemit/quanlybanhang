@@ -25,20 +25,23 @@ namespace QuanLyBanHangDALs
             SqlCommand getProductCmd = new SqlCommand("SELECT * FROM products WHERE ID = @ProductID", Helper.SqlCnn);
             getProductCmd.Parameters.AddWithValue("ProductID", product_id);
 
-            SqlDataReader reader = getProductCmd.ExecuteReader();
-            
             SanPham product = null;
 
-            if(reader.Read()) {
-                product = new SanPham(
-                    reader["id"].ToString(),
-                    reader["name"].ToString(),
-                    Convert.ToInt32(reader["cat_id"]),
-                    Convert.ToInt32(reader["price"]),
-                    reader["unit"].ToString(),
-                    1,
-                    1
-                );
+            try {
+                SqlDataReader reader = getProductCmd.ExecuteReader();
+                if(reader.Read()) {
+                    product = new SanPham(
+                        reader["id"].ToString(),
+                        reader["name"].ToString(),
+                        Convert.ToInt32(reader["cat_id"]),
+                        Convert.ToInt32(reader["price"]),
+                        reader["unit"].ToString(),
+                        1,
+                        1
+                    );
+                }
+            } catch(SqlException) {
+                Console.WriteLine("Can't excute Sql command: " + getProductCmd.CommandText);
             }
 
             Helper.SqlCnn.Close();
@@ -47,26 +50,50 @@ namespace QuanLyBanHangDALs
         } 
 
 
-        public void SaveOrderToDatbase(List<SanPham> products, Order order) {
+        public bool SaveOrderToDatbase(List<SanPham> products, Order order) {
             Helper.SqlCnn.Open();
 
             //insert to order table
-            string insertString = "INSERT INTO orders(customer, customer_phone, deposits, created_by, created_at)  OUTPUT Inserted.id VALUES(@Customer, @Customer_phone, @Deposits, @Created_by, CONVERT(datetime, @Created_at, 103))";
+            string insertString = "INSERT INTO orders(customer, customer_phone, deposits, created_by, created_at, total)  OUTPUT Inserted.id VALUES(@Customer, @Customer_phone, @Deposits, @Created_by, CONVERT(datetime, @Created_at, 103), @Total)";
             SqlCommand insertOrder = new SqlCommand(insertString, Helper.SqlCnn);
             insertOrder.Parameters.AddWithValue("Customer", order.Customer);
             insertOrder.Parameters.AddWithValue("Customer_phone", order.Customer_phone);
             insertOrder.Parameters.AddWithValue("Deposits", order.Deposits);
             insertOrder.Parameters.AddWithValue("Created_by", order.Created_by);
             insertOrder.Parameters.AddWithValue("Created_at", order.Created_at);
-            string newestOrderId = insertOrder.ExecuteScalar().ToString();
+            insertOrder.Parameters.AddWithValue("Total", order.Total);
+
+            string newestOrderId = "";
+
+            try {
+                newestOrderId = insertOrder.ExecuteScalar().ToString();
+            } catch(SqlException e) {
+                Console.WriteLine("Can't to insert to database!, SQL command: " + insertString);
+                Helper.SqlCnn.Close();
+
+                Console.WriteLine(e.ToString());
+
+                return false;
+            }
 
             //insert to order_items table
             foreach(SanPham sp in products) {
                 string sqlString = "INSERT INTO order_items VALUES("+newestOrderId+", "+sp.Id+", "+sp.Count+")";
                 SqlCommand insertOrderItem = new SqlCommand(sqlString, Helper.SqlCnn);
-                insertOrderItem.ExecuteNonQuery();
+
+                try {
+                    insertOrderItem.ExecuteNonQuery();
+                } catch(SqlException) {
+                    Console.WriteLine("Can't to insert to database!, SQL command: "+sqlString);
+                    Helper.SqlCnn.Close();
+
+                    return false;
+                }
             }
+
             Helper.SqlCnn.Close();
+
+            return true;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyBanHangLibraries;
+using QuanLyBanHangDTOs;
 
 /**
  * 
@@ -22,13 +23,32 @@ namespace QuanLyBanHang
     public partial class MainForm : Form {
 
         private Image CloseTab, CloseTabActive;
+        private User CurrentUser;
 
-        public MainForm() {
+        public MainForm(User logedInUser = null) {
+
             InitializeComponent();
+
+            //test data
+            CurrentUser = new User(
+                1,
+                "trieuniemit",
+                "Triệu Tài Niêm",
+                "81dc9bdb52d04dc20036dbd8313ed055",
+                "0395710844",
+                "trieuniemit@gmail.com",
+                1,
+                0,
+                "08-02-1998",
+                "20-10-2018"
+            );
+            //CurrentUser = logedInUser;
+
+            lbUserName.Text = CurrentUser.Fullname;
+            lbPosition.Text = Helper.GetUserRole(CurrentUser.Role);
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            Helper.CurrentUserId = 1;
 
             //add event
             this.tabMain.DrawMode = TabDrawMode.OwnerDrawFixed;
@@ -38,15 +58,24 @@ namespace QuanLyBanHang
             Size imageSize = new Size(20,20);
             Bitmap imgBitmap = new Bitmap(Properties.Resources.close_tab2, imageSize);
             Bitmap imgBitmapActive = new Bitmap(Properties.Resources.close_tab, imageSize);
-
             CloseTab = imgBitmap;
             CloseTabActive = imgBitmapActive;
+
+            //set padding for tab header
             tabMain.Padding = new Point(40);
 
         }
 
 
         private void AddNewTab(Form frm) {
+            //open tab if it exitst
+            for(int i = 0; i < tabMain.TabCount; i++) {
+                if(frm.Text.Trim() == tabMain.TabPages[i].Text) {
+                    tabMain.SelectedTab = tabMain.TabPages[i];
+                    return;
+                }
+            }
+
             TabPage newTabPage = new TabPage(frm.Text.Trim());
 
             //setting form
@@ -64,8 +93,7 @@ namespace QuanLyBanHang
         } 
 
 
-        private void tabMain_DrawItem(object sender, DrawItemEventArgs e)
-        {
+        private void tabMain_DrawItem(object sender, DrawItemEventArgs e) {
             Rectangle rect = tabMain.GetTabRect(e.Index);
             Rectangle imageRect = new Rectangle(rect.Right - CloseTab.Width, rect.Top+(rect.Height-CloseTab.Height)/2, CloseTab.Width, CloseTab.Height);
             //resize rect
@@ -111,9 +139,24 @@ namespace QuanLyBanHang
             }
         }
 
-        //Open Ban Hang form
-        private void ptbBanHang_Click_lbBanHang_Click(object sender, EventArgs e) {
-            AddNewTab(new Forms.BanHangForm());
+        private void itemBanHang_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new Forms.BanHangForm(CurrentUser));
+        }
+
+        private void parentBanHang_DoubleClick(object sender, EventArgs e)
+        {
+            AddNewTab(new Forms.BanHangForm(CurrentUser));
+        }
+
+        private void lbLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void itemLichSu_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new Forms.BanHangForm_LichSuBanHang());
         }
 
     }

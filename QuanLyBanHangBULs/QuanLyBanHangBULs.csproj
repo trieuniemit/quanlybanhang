@@ -36,6 +36,10 @@
     <Reference Include="QuanLyBanHangDTOs">
       <HintPath>..\QuanLyBanHangDTOs\bin\Debug\QuanLyBanHangDTOs.dll</HintPath>
     </Reference>
+    <Reference Include="QuanLyBanHangLibraries, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\QuanLyBanHangLibraries\bin\Debug\QuanLyBanHangLibraries.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHangBUL.cs" />
+    <Compile Include="DonHangDaBanBUL.cs" />
     <Compile Include="LoginBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

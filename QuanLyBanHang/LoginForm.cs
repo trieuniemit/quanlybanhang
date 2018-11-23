@@ -4,6 +4,7 @@ using QuanLyBanHangLibraries;
 using QuanLyBanHangLibraries.Classes;
 using QuanLyBanHangBULs;
 using System.Drawing;
+using QuanLyBanHangDTOs;
 
 /**
  * 
@@ -22,13 +23,6 @@ namespace QuanLyBanHang
         public LoginForm() {
             InitializeComponent();
         }
-        
-        private void OpenMainForm() {
-            this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.ShowDialog();
-            this.Close();
-        }
 
         private void LoginForm_Load(object sender, EventArgs e) {
             tbUsername.Text = Properties.Settings.Default.Username;
@@ -45,9 +39,13 @@ namespace QuanLyBanHang
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(loginBul.CheckLogin(tbUsername.Text, tbPassword.Text)) {
+            User curentUser = loginBul.CheckLogin(tbUsername.Text, tbPassword.Text);
 
-                //opend Main Form if loged in
+            if(curentUser != null) {
+                //set current user Id for Helper
+                Helper.CurrentUserId = curentUser.Id;
+
+                //open Main Form if loged in
                 if(cbRemember.Checked) {
                     Properties.Settings.Default.Username = tbUsername.Text;
                     Properties.Settings.Default.Password = tbPassword.Text;
@@ -58,10 +56,14 @@ namespace QuanLyBanHang
                     Properties.Settings.Default.Save();
                 }
 
-                OpenMainForm();
+                //open Main Form
+                this.Hide();
+                MainForm mainForm = new MainForm(curentUser);
+                mainForm.ShowDialog();
+                this.Close();
 
             } else {
-                MessageBox.Show("Sai tài khoản hoăc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sai tên tài khoản hoăc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
