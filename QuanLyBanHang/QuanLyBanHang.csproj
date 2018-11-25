@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="QUanLyBanHangBULs">
       <HintPath>..\QuanLyBanHangBULs\bin\Debug\QUanLyBanHangBULs.dll</HintPath>
     </Reference>
@@ -47,6 +49,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,29 +77,17 @@
     <Compile Include="Forms\BanHangForms\BanHangForm_LichSuBanHang.Designer.cs">
       <DependentUpon>BanHangForm_LichSuBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CaiDatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CaiDatForm.Designer.cs">
+      <DependentUpon>CaiDatForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DoiMatKhauForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DoiMatKhauForm.Designer.cs">
       <DependentUpon>DoiMatKhauForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QuanLyLoaiSanPhamForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuanLyLoaiSanPhamForm.Designer.cs">
-      <DependentUpon>QuanLyLoaiSanPhamForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QuanLyNhanVienForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuanLyNhanVienForm.Designer.cs">
-      <DependentUpon>QuanLyNhanVienForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QuanLySanPhamForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuanLySanPhamForm.Designer.cs">
-      <DependentUpon>QuanLySanPhamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ThongKeForm.cs">
       <SubType>Form</SubType>
@@ -104,11 +95,17 @@
     <Compile Include="Forms\ThongKeForm.Designer.cs">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ThongTinCaNhanForm.cs">
+    <Compile Include="HoSyHuy\QuanLySanPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ThongTinCaNhanForm.Designer.cs">
-      <DependentUpon>ThongTinCaNhanForm.cs</DependentUpon>
+    <Compile Include="HoSyHuy\QuanLySanPhamForm.Designer.cs">
+      <DependentUpon>QuanLySanPhamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoSyHuy\ThemSuaSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoSyHuy\ThemSuaSanPham.Designer.cs">
+      <DependentUpon>ThemSuaSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -121,6 +118,18 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguyenHuynhDuc\QuanLyLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguyenHuynhDuc\QuanLyLoaiSanPham.Designer.cs">
+      <DependentUpon>QuanLyLoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NguyenHuynhDuc\SuaThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguyenHuynhDuc\SuaThongTinCaNhan.Designer.cs">
+      <DependentUpon>SuaThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgramData\HoaDonBanHangDataSet.cs">
@@ -147,14 +156,29 @@
     <EmbeddedResource Include="Forms\BanHangForms\BanHangForm_LichSuBanHang.resx">
       <DependentUpon>BanHangForm_LichSuBanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuanLyNhanVienForm.resx">
-      <DependentUpon>QuanLyNhanVienForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CaiDatForm.resx">
+      <DependentUpon>CaiDatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ThongKeForm.resx">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoSyHuy\QuanLySanPhamForm.resx">
+      <DependentUpon>QuanLySanPhamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoSyHuy\ThemSuaSanPham.resx">
+      <DependentUpon>ThemSuaSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguyenHuynhDuc\QuanLyLoaiSanPham.resx">
+      <DependentUpon>QuanLyLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguyenHuynhDuc\SuaThongTinCaNhan.resx">
+      <DependentUpon>SuaThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramData\HoaDonBanHangReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -187,6 +211,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\settings_64.png" />
+    <None Include="Resources\purchase_order_24.png" />
+    <None Include="Resources\order_24.png" />
+    <None Include="Resources\user_24.png" />
+    <None Include="Resources\us_dollar_24.png" />
+    <None Include="Resources\static_views_40.png" />
     <None Include="Resources\shutdown_161.png" />
     <None Include="Resources\users_64.png" />
     <None Include="Resources\list_64.png" />
@@ -197,6 +227,8 @@
     <None Include="Resources\close-tab.png" />
     <None Include="Resources\close-tab1.png" />
     <None Include="Resources\folder_64.png" />
+    <None Include="Resources\box_24.png" />
+    <None Include="Resources\folder_24.png" />
     <Content Include="Resources\icon-close.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\remove1.png" />

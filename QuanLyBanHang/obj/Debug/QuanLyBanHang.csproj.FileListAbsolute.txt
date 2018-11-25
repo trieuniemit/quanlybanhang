@@ -13,7 +13,9 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.csprojR
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.BanHangForm.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.BanHangForm_InHoaDon.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.BanHangForm_LichSuBanHang.resources
-E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.QuanLyNhanVienForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.ThongKeForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.HoSyHuy.QuanLySanPhamForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.HoSyHuy.ThemSuaSanPham.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.LoginForm.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.MainForm.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Properties.Resources.resources
@@ -22,3 +24,6 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\RdlCompile.cache
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\RdlCompile.compiled
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.exe
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.CaiDatForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenHuynhDuc.QuanLyLoaiSanPham.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenHuynhDuc.SuaThongTinCaNhan.resources

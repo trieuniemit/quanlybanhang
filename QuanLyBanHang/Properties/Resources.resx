@@ -124,11 +124,20 @@
   <data name="product_cart_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\product_cart_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="purchase_order_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchase_order_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_tab2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-tab1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icon-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="us_dollar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\us_dollar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +145,17 @@
   <data name="list_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="static_views_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\static_views_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shutdown_161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shutdown_161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +163,11 @@
   <data name="close_tab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-tab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="order_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\order_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +178,10 @@
   <data name="shopping_cart_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shutdown_161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shutdown_161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folder_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -33,32 +33,29 @@ namespace QuanLyBanHang
             this.lbLogout = new System.Windows.Forms.Label();
             this.lbPosition = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
-            this.ptbLogout = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.parentBanHang = new System.Windows.Forms.ToolStripDropDownButton();
             this.itemBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.parentSanPham = new System.Windows.Forms.ToolStripDropDownButton();
             this.itemSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLoaiSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.parentThongKe = new System.Windows.Forms.ToolStripDropDownButton();
-            this.itemThongKeNgay = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemThongKeThang = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemThongKeNam = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.parentThongKe = new System.Windows.Forms.ToolStripButton();
             this.parentCaNhan = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.parentNhanVien = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.parentCaiDat = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogout)).BeginInit();
+            this.ptbLogout = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tsMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -108,18 +105,6 @@ namespace QuanLyBanHang
             this.lbUserName.Text = "<Họ và tên>";
             this.lbUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ptbLogout
-            // 
-            this.ptbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbLogout.Image = global::QuanLyBanHang.Properties.Resources.shutdown_161;
-            this.ptbLogout.Location = new System.Drawing.Point(879, 39);
-            this.ptbLogout.Name = "ptbLogout";
-            this.ptbLogout.Size = new System.Drawing.Size(20, 20);
-            this.ptbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbLogout.TabIndex = 19;
-            this.ptbLogout.TabStop = false;
-            this.ptbLogout.Click += new System.EventHandler(this.lbLogout_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -166,6 +151,36 @@ namespace QuanLyBanHang
             this.tsMainMenu.TabIndex = 8;
             this.tsMainMenu.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.AutoSize = false;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.AutoSize = false;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
+            // 
             // parentBanHang
             // 
             this.parentBanHang.AutoSize = false;
@@ -200,16 +215,11 @@ namespace QuanLyBanHang
             this.itemLichSu.Text = "Đơn hàng đã bán";
             this.itemLichSu.Click += new System.EventHandler(this.itemLichSu_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
-            // 
             // parentSanPham
             // 
             this.parentSanPham.AutoSize = false;
             this.parentSanPham.AutoToolTip = false;
+            this.parentSanPham.DoubleClickEnabled = true;
             this.parentSanPham.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemSanPham,
             this.itemLoaiSanPham});
@@ -221,6 +231,7 @@ namespace QuanLyBanHang
             this.parentSanPham.Size = new System.Drawing.Size(100, 70);
             this.parentSanPham.Text = "Sản Phẩm";
             this.parentSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.parentSanPham.DoubleClick += new System.EventHandler(this.parentSanPham_DoubleClick);
             // 
             // itemSanPham
             // 
@@ -228,6 +239,7 @@ namespace QuanLyBanHang
             this.itemSanPham.Name = "itemSanPham";
             this.itemSanPham.Size = new System.Drawing.Size(168, 24);
             this.itemSanPham.Text = "Sản phẩm";
+            this.itemSanPham.Click += new System.EventHandler(this.itemSanPham_Click);
             // 
             // itemLoaiSanPham
             // 
@@ -236,21 +248,12 @@ namespace QuanLyBanHang
             this.itemLoaiSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.itemLoaiSanPham.Size = new System.Drawing.Size(168, 24);
             this.itemLoaiSanPham.Text = "Loại sản phẩm";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
+            this.itemLoaiSanPham.Click += new System.EventHandler(this.itemLoaiSanPham_Click);
             // 
             // parentThongKe
             // 
             this.parentThongKe.AutoSize = false;
             this.parentThongKe.AutoToolTip = false;
-            this.parentThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemThongKeNgay,
-            this.itemThongKeThang,
-            this.itemThongKeNam});
             this.parentThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.parentThongKe.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.parentThongKe.Image = global::QuanLyBanHang.Properties.Resources.list_64;
@@ -259,33 +262,7 @@ namespace QuanLyBanHang
             this.parentThongKe.Size = new System.Drawing.Size(100, 70);
             this.parentThongKe.Text = "Thống Kê";
             this.parentThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // itemThongKeNgay
-            // 
-            this.itemThongKeNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.itemThongKeNgay.Name = "itemThongKeNgay";
-            this.itemThongKeNgay.Size = new System.Drawing.Size(208, 24);
-            this.itemThongKeNgay.Text = "Thống kê theo ngày";
-            // 
-            // itemThongKeThang
-            // 
-            this.itemThongKeThang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.itemThongKeThang.Name = "itemThongKeThang";
-            this.itemThongKeThang.Size = new System.Drawing.Size(208, 24);
-            this.itemThongKeThang.Text = "Thống kê theo tháng";
-            // 
-            // itemThongKeNam
-            // 
-            this.itemThongKeNam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.itemThongKeNam.Name = "itemThongKeNam";
-            this.itemThongKeNam.Size = new System.Drawing.Size(208, 24);
-            this.itemThongKeNam.Text = "Thống kê theo năm";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
+            this.parentThongKe.Click += new System.EventHandler(this.parentThongKe_Click);
             // 
             // parentCaNhan
             // 
@@ -300,12 +277,7 @@ namespace QuanLyBanHang
             this.parentCaNhan.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.parentCaNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.parentCaNhan.ToolTipText = "Thông tin cá nhân";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
+            this.parentCaNhan.Click += new System.EventHandler(this.parentCaNhan_Click);
             // 
             // parentNhanVien
             // 
@@ -321,18 +293,12 @@ namespace QuanLyBanHang
             this.parentNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.parentNhanVien.ToolTipText = "Quản lý nhân viên";
             // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
-            // 
             // parentCaiDat
             // 
             this.parentCaiDat.AutoSize = false;
             this.parentCaiDat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.parentCaiDat.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.parentCaiDat.Image = global::QuanLyBanHang.Properties.Resources.users_64;
+            this.parentCaiDat.Image = global::QuanLyBanHang.Properties.Resources.settings_64;
             this.parentCaiDat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.parentCaiDat.Name = "parentCaiDat";
             this.parentCaiDat.Size = new System.Drawing.Size(100, 70);
@@ -340,6 +306,19 @@ namespace QuanLyBanHang
             this.parentCaiDat.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.parentCaiDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.parentCaiDat.ToolTipText = "Cấu hình phần mềm";
+            this.parentCaiDat.Click += new System.EventHandler(this.parentCaiDat_Click);
+            // 
+            // ptbLogout
+            // 
+            this.ptbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbLogout.Image = global::QuanLyBanHang.Properties.Resources.shutdown_161;
+            this.ptbLogout.Location = new System.Drawing.Point(879, 39);
+            this.ptbLogout.Name = "ptbLogout";
+            this.ptbLogout.Size = new System.Drawing.Size(20, 20);
+            this.ptbLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbLogout.TabIndex = 19;
+            this.ptbLogout.TabStop = false;
+            this.ptbLogout.Click += new System.EventHandler(this.lbLogout_Click);
             // 
             // MainForm
             // 
@@ -355,13 +334,13 @@ namespace QuanLyBanHang
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bán hàng";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogout)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tsMainMenu.ResumeLayout(false);
             this.tsMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,16 +363,13 @@ namespace QuanLyBanHang
         private ToolStripMenuItem itemSanPham;
         private ToolStripMenuItem itemLoaiSanPham;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripDropDownButton parentThongKe;
-        private ToolStripMenuItem itemThongKeNgay;
-        private ToolStripMenuItem itemThongKeThang;
-        private ToolStripMenuItem itemThongKeNam;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton parentCaNhan;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripButton parentNhanVien;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripButton parentCaiDat;
+        private ToolStripButton parentThongKe;
 
 
     }

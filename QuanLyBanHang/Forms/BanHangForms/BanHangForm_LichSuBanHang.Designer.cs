@@ -30,6 +30,7 @@
         {
             this.dgvBanHangHistory = new System.Windows.Forms.DataGridView();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbUser = new System.Windows.Forms.ComboBox();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.panelFill = new System.Windows.Forms.Panel();
-            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanHangHistory)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelFill.SuspendLayout();
@@ -80,11 +80,25 @@
             this.panelTop.Size = new System.Drawing.Size(1001, 79);
             this.panelTop.TabIndex = 1;
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.ForeColor = System.Drawing.Color.White;
+            this.btnShowAll.Location = new System.Drawing.Point(914, 24);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(73, 26);
+            this.btnShowAll.TabIndex = 7;
+            this.btnShowAll.Text = "Tất Cả";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(587, 19);
+            this.label3.Location = new System.Drawing.Point(587, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 6;
@@ -96,7 +110,7 @@
             this.cbbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbUser.FormattingEnabled = true;
-            this.cbbUser.Location = new System.Drawing.Point(657, 15);
+            this.cbbUser.Location = new System.Drawing.Point(657, 25);
             this.cbbUser.Name = "cbbUser";
             this.cbbUser.Size = new System.Drawing.Size(121, 24);
             this.cbbUser.TabIndex = 5;
@@ -107,7 +121,7 @@
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(793, 14);
+            this.btnFilter.Location = new System.Drawing.Point(793, 24);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(73, 26);
             this.btnFilter.TabIndex = 4;
@@ -119,7 +133,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 20);
+            this.label2.Location = new System.Drawing.Point(329, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 3;
@@ -128,7 +142,7 @@
             // dtpToDate
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpToDate.Location = new System.Drawing.Point(361, 17);
+            this.dtpToDate.Location = new System.Drawing.Point(361, 27);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(217, 23);
             this.dtpToDate.TabIndex = 2;
@@ -137,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Location = new System.Drawing.Point(21, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 1;
@@ -146,7 +160,7 @@
             // dtpFromDate
             // 
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFromDate.Location = new System.Drawing.Point(82, 17);
+            this.dtpFromDate.Location = new System.Drawing.Point(82, 27);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(230, 23);
             this.dtpFromDate.TabIndex = 0;
@@ -159,20 +173,6 @@
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(1001, 306);
             this.panelFill.TabIndex = 2;
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnShowAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAll.ForeColor = System.Drawing.Color.White;
-            this.btnShowAll.Location = new System.Drawing.Point(914, 14);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(73, 26);
-            this.btnShowAll.TabIndex = 7;
-            this.btnShowAll.Text = "Tất Cả";
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // BanHangForm_LichSuBanHang
             // 

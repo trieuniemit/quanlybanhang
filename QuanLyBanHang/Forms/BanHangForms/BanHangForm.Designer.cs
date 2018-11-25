@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbTienTra = new System.Windows.Forms.TextBox();
@@ -193,9 +193,9 @@
             this.panel3.Controls.Add(this.ptbAdd);
             this.panel3.Controls.Add(this.ptbRemove);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 487);
+            this.panel3.Location = new System.Drawing.Point(10, 477);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(992, 60);
+            this.panel3.Size = new System.Drawing.Size(972, 60);
             this.panel3.TabIndex = 15;
             // 
             // btnSave
@@ -255,23 +255,23 @@
             this.dgvListProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListProduct.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvListProduct.Location = new System.Drawing.Point(0, 42);
+            this.dgvListProduct.Location = new System.Drawing.Point(0, 35);
             this.dgvListProduct.Margin = new System.Windows.Forms.Padding(10);
             this.dgvListProduct.Name = "dgvListProduct";
             this.dgvListProduct.ReadOnly = true;
             this.dgvListProduct.RowHeadersVisible = false;
             this.dgvListProduct.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvListProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListProduct.Size = new System.Drawing.Size(992, 290);
+            this.dgvListProduct.Size = new System.Drawing.Size(972, 290);
             this.dgvListProduct.TabIndex = 1;
             // 
             // panel4
@@ -287,9 +287,9 @@
             this.panel4.Controls.Add(this.tbTienTra);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(10, 10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(992, 155);
+            this.panel4.Size = new System.Drawing.Size(972, 142);
             this.panel4.TabIndex = 16;
             // 
             // panel5
@@ -297,9 +297,9 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.dgvListProduct);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 155);
+            this.panel5.Location = new System.Drawing.Point(10, 152);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(992, 332);
+            this.panel5.Size = new System.Drawing.Size(972, 325);
             this.panel5.TabIndex = 17;
             // 
             // label3
@@ -309,7 +309,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(0, 10);
+            this.label3.Location = new System.Drawing.Point(0, 3);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -330,9 +330,10 @@
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.MaximizeBox = false;
             this.Name = "BanHangForm";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bán Hàng";
+            this.Text = "Bán hàng";
             this.Load += new System.EventHandler(this.BanHangForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

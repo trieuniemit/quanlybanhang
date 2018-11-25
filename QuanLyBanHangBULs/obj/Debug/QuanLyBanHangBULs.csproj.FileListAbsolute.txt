@@ -8,3 +8,4 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangBULs\bin\Debug\QuanLyBanHangDTOs
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangBULs\bin\Debug\QuanLyBanHangLibraries.pdb
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangBULs\obj\Debug\QUanLyBanHangBULs.dll
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangBULs\obj\Debug\QUanLyBanHangBULs.pdb
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangBULs\obj\Debug\QuanLyBanHangBULs.csprojResolveAssemblyReference.cache

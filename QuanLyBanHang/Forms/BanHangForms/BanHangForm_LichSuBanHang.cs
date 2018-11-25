@@ -63,7 +63,7 @@ namespace QuanLyBanHang.Forms
 
         private void InitDataGribView() {
             //init header
-            string[] headerText = {"Mã Đơn Hàng","Ngày Giờ", "Khách Hàng", "SĐT Khách Hàng", "Tiền Đơn Hàng", "Tiền KH Trả", "Nhân Viên", "Chi Tiết"};
+            string[] headerText = {"Mã Đơn Hàng","Ngày Giờ", "Khách Hàng", "SĐT Khách Hàng", "Tiền Đơn Hàng", "Tiền KH Trả", "Nhân Viên", "Hóa Đơn"};
             dgvBanHangHistory.ColumnCount = headerText.Length;
              for(int i = 0; i < headerText.Length; i++) {
                 dgvBanHangHistory.Columns[i].HeaderText = headerText[i];

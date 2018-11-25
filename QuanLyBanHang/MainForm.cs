@@ -159,5 +159,35 @@ namespace QuanLyBanHang
             AddNewTab(new Forms.BanHangForm_LichSuBanHang());
         }
 
+        private void parentThongKe_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new Forms.ThongKeForm());
+        }
+
+        private void itemSanPham_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new HoSyHuy.QuanLySanPhamForm());
+        }
+
+        private void parentSanPham_DoubleClick(object sender, EventArgs e)
+        {
+             AddNewTab(new HoSyHuy.QuanLySanPhamForm());
+        }
+
+        private void parentCaiDat_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new Forms.CaiDatForm());
+        }
+
+        private void parentCaNhan_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new NguyenHuynhDuc.SuaThongTinCaNhan());
+        }
+
+        private void itemLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new NguyenHuynhDuc.QuanLyLoaiSanPham());
+        }
+
     }
 }
