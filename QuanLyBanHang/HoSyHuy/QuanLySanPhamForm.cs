@@ -27,11 +27,12 @@ namespace QuanLyBanHang.HoSyHuy
         }
 
        
-        public void hienThi()
+        public void hienThi(string maSP = "")
         {
             con.Open();
-            string select = "SELECT id,products.name AS product_name,product_cats.name AS product_cats_name,unit,count,price,promo_price,status,created_at,updated_at FROM products,product_cats WHERE products.cat_id = product_cats.cat_id";
+            string select = "SELECT id,products.name AS product_name,product_cats.name AS product_cats_name,unit,count,price,promo_price,status,created_at,updated_at FROM products,product_cats WHERE products.cat_id = product_cats.cat_id AND products.id LIKE @TimTheoMa";
             SqlCommand cmd = new SqlCommand(select, con);
+            cmd.Parameters.AddWithValue("TimTheoMa", "%" + maSP +"%");
             DataTable dt = new DataTable();
             SqlDataReader dr = cmd.ExecuteReader();
             dt.Load(dr);
@@ -104,7 +105,7 @@ namespace QuanLyBanHang.HoSyHuy
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            hienThi(tbTimKiem.Text.Trim());
         }
     }
 }

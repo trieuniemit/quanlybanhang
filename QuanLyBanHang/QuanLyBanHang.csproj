@@ -119,6 +119,12 @@
     <Compile Include="HoSyHuy\ThemSuaSanPham.Designer.cs">
       <DependentUpon>ThemSuaSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="IntroduceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntroduceForm.Designer.cs">
+      <DependentUpon>IntroduceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HoSyHuy\ThemSuaSanPham.resx">
       <DependentUpon>ThemSuaSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntroduceForm.resx">
+      <DependentUpon>IntroduceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

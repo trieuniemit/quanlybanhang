@@ -49,6 +49,9 @@ namespace QuanLyBanHang
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
+            //add introduce tab
+             AddNewTab(new IntroduceForm());
+
             //add event
             this.tabMain.DrawMode = TabDrawMode.OwnerDrawFixed;
             this.tabMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabMain_DrawItem);
@@ -82,7 +85,12 @@ namespace QuanLyBanHang
                     tabMain.SelectedTab = tabMain.TabPages[i];
                     return;
                 }
+
+                if(tabMain.TabPages[i].Text == "Giới thiệu") {
+                    tabMain.TabPages.RemoveAt(i);
+                }
             }
+
 
             TabPage newTabPage = new TabPage(frm.Text.Trim());
 
@@ -142,8 +150,13 @@ namespace QuanLyBanHang
                 Rectangle rect = tabMain.GetTabRect(i);
                 Rectangle imageRect = new Rectangle(rect.Right - CloseTab.Width, rect.Top+(rect.Height-CloseTab.Height)/2, CloseTab.Width, CloseTab.Height);
 
-                if(imageRect.Contains(e.Location))
+                if(imageRect.Contains(e.Location)) {
                     tabMain.TabPages.Remove(tabMain.SelectedTab);
+                    if(tabMain.TabPages.Count == 0) {
+                        //add introduce tab
+                        AddNewTab(new IntroduceForm());
+                    }
+                }
             }
         }
 

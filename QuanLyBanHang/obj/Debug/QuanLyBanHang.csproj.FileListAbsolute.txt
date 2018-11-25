@@ -29,3 +29,4 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenH
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenHuynhDuc.SuaThongTinCaNhan.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.DuongDucSon.QuanLyNhanVien.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.DuongDucSon.NhanVienForm.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.IntroduceForm.resources
