@@ -36,20 +36,20 @@ namespace QuanLyBanHang
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.parentBanHang = new System.Windows.Forms.ToolStripDropDownButton();
             this.itemBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLichSu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.parentSanPham = new System.Windows.Forms.ToolStripDropDownButton();
             this.itemSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.itemLoaiSanPham = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.parentThongKe = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.parentCaNhan = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.parentNhanVien = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.parentCaiDat = new System.Windows.Forms.ToolStripButton();
             this.ptbLogout = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -151,36 +151,6 @@ namespace QuanLyBanHang
             this.tsMainMenu.TabIndex = 8;
             this.tsMainMenu.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.AutoSize = false;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.AutoSize = false;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.AutoSize = false;
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.AutoSize = false;
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.AutoSize = false;
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
-            // 
             // parentBanHang
             // 
             this.parentBanHang.AutoSize = false;
@@ -214,6 +184,12 @@ namespace QuanLyBanHang
             this.itemLichSu.Size = new System.Drawing.Size(186, 24);
             this.itemLichSu.Text = "Đơn hàng đã bán";
             this.itemLichSu.Click += new System.EventHandler(this.itemLichSu_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.AutoSize = false;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 70);
             // 
             // parentSanPham
             // 
@@ -250,6 +226,12 @@ namespace QuanLyBanHang
             this.itemLoaiSanPham.Text = "Loại sản phẩm";
             this.itemLoaiSanPham.Click += new System.EventHandler(this.itemLoaiSanPham_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.AutoSize = false;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 70);
+            // 
             // parentThongKe
             // 
             this.parentThongKe.AutoSize = false;
@@ -263,6 +245,12 @@ namespace QuanLyBanHang
             this.parentThongKe.Text = "Thống Kê";
             this.parentThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.parentThongKe.Click += new System.EventHandler(this.parentThongKe_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.AutoSize = false;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 70);
             // 
             // parentCaNhan
             // 
@@ -279,6 +267,12 @@ namespace QuanLyBanHang
             this.parentCaNhan.ToolTipText = "Thông tin cá nhân";
             this.parentCaNhan.Click += new System.EventHandler(this.parentCaNhan_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.AutoSize = false;
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 70);
+            // 
             // parentNhanVien
             // 
             this.parentNhanVien.AutoSize = false;
@@ -292,6 +286,13 @@ namespace QuanLyBanHang
             this.parentNhanVien.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.parentNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.parentNhanVien.ToolTipText = "Quản lý nhân viên";
+            this.parentNhanVien.Click += new System.EventHandler(this.parentNhanVien_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.AutoSize = false;
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 70);
             // 
             // parentCaiDat
             // 

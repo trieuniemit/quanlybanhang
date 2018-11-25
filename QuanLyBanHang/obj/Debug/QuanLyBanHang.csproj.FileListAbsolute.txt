@@ -27,3 +27,5 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.pdb
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.Forms.CaiDatForm.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenHuynhDuc.QuanLyLoaiSanPham.resources
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.NguyenHuynhDuc.SuaThongTinCaNhan.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.DuongDucSon.QuanLyNhanVien.resources
+E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHang\obj\Debug\QuanLyBanHang.DuongDucSon.NhanVienForm.resources

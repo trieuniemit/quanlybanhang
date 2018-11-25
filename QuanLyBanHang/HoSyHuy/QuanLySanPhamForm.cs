@@ -37,26 +37,26 @@ namespace QuanLyBanHang.HoSyHuy
             dt.Load(dr);
             dgvDS.DataSource = dt;
 
-            dgvDS.Columns[0].HeaderText = "Mã sản phẩm";
-            dgvDS.Columns[0].Width = 70;
+            dgvDS.Columns[0].HeaderText = "Mã SP";
+            dgvDS.Columns[0].Width = 100;
             dgvDS.Columns[1].HeaderText = "Tên sản phẩm";
-            dgvDS.Columns[1].Width = 150;
-            dgvDS.Columns[2].HeaderText = "Loại sản phẩm";
+            dgvDS.Columns[1].Width = 170;
+            dgvDS.Columns[2].HeaderText = "Loại SP";
             dgvDS.Columns[2].Width = 100;
             dgvDS.Columns[3].HeaderText = "Đơn vị";
-            dgvDS.Columns[3].Width = 100;
+            dgvDS.Columns[3].Width = 70;
             dgvDS.Columns[4].HeaderText = "Số Lượng";
             dgvDS.Columns[4].Width = 100;
             dgvDS.Columns[5].HeaderText = "Giá";
             dgvDS.Columns[5].Width = 100;
-            dgvDS.Columns[6].HeaderText = "Giá khuyến mại";
+            dgvDS.Columns[6].HeaderText = "Giá KM";
             dgvDS.Columns[6].Width = 100;
             dgvDS.Columns[7].HeaderText = "Tình trạng";
-            dgvDS.Columns[7].Width = 100;
+            dgvDS.Columns[7].Width = 80;
             dgvDS.Columns[8].HeaderText = "Thời gian tạo";
-            dgvDS.Columns[8].Width = 150;
+            dgvDS.Columns[8].Width = 170;
             dgvDS.Columns[9].HeaderText = "Thời gian sửa";
-            dgvDS.Columns[9].Width = 150;
+            dgvDS.Columns[9].Width = 120;
 
             con.Close();
         }
@@ -75,22 +75,30 @@ namespace QuanLyBanHang.HoSyHuy
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            ThemSuaSanPham editForm = new ThemSuaSanPham(int.Parse(dgvDS.SelectedRows[0].Cells[0].Value.ToString()));
+            ThemSuaSanPham editForm = new ThemSuaSanPham(dgvDS.SelectedRows[0].Cells[0].Value.ToString().Trim());
             editForm.ShowDialog();
             hienThi();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            con.Open();
-            int index = dgvDS.CurrentRow.Index;
-            SqlCommand cmd = new SqlCommand("DELETE FROM products WHERE id = @maSP",con);
+            DialogResult kq = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm đã chọn?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            cmd.Parameters.AddWithValue("maSP",dgvDS.Rows[index].Cells[0].Value.ToString());
-            cmd.ExecuteNonQuery();
+            if(kq == DialogResult.Yes) {
+                con.Open();
+                int index = dgvDS.CurrentRow.Index;
+                try {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM products WHERE id = @maSP",con);
 
-            con.Close();
-            hienThi();
+                    cmd.Parameters.AddWithValue("maSP",dgvDS.Rows[index].Cells[0].Value.ToString());
+                    cmd.ExecuteNonQuery();
+                } catch(SqlException err) {
+                    MessageBox.Show("Không thể xóa sản phẩm này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Console.WriteLine(err.ToString());
+                }
+                con.Close();
+                hienThi();
+            }
             
         }
 

@@ -19,6 +19,8 @@ namespace QuanLyBanHang.NguyenHuynhDuc
             InitializeComponent();
         }
 
+        string tuyChon = "";
+
         SqlConnection con;
 
         private void QuanLyLoaiSanPham_Load(object sender, EventArgs e)
@@ -38,6 +40,9 @@ namespace QuanLyBanHang.NguyenHuynhDuc
             adapter.Fill(dt);
             dgvDanhSach.DataSource = dt;
 
+            dgvDanhSach.Columns[0].HeaderText = "Mã Loại";
+            dgvDanhSach.Columns[1].HeaderText = "Tên Loại";
+
             con.Close();
         }
 
@@ -49,42 +54,50 @@ namespace QuanLyBanHang.NguyenHuynhDuc
                 return;
             }
 
-            con.Open();
+            if(tuyChon == "sua") {
+                con.Open();
 
-            string SqlINSERT = "INSERT INTO product_cats VALUES(@ten)";
+                string SqlUPDATE = "UPDATE product_cats SET name = @ten WHERE cat_id = @ma";
+                SqlCommand cmdSua = new SqlCommand(SqlUPDATE, con);
+                cmdSua.Parameters.AddWithValue("ma", int.Parse(dgvDanhSach.SelectedRows[0].Cells[0].Value.ToString()));
+                cmdSua.Parameters.AddWithValue("ten", txtTen.Text);
+                cmdSua.ExecuteNonQuery();
 
-            SqlCommand command = new SqlCommand(SqlINSERT, con);
-            command.Parameters.AddWithValue("ten", txtTen.Text);
-            command.ExecuteNonQuery();
+                con.Close();
 
-            con.Close();
+                txtTen.Text = "";
+                btnCapNhat.Text = "Thêm Mới";
+                tuyChon = "";
+
+            } else {
+
+                con.Open();
+
+                string SqlINSERT = "INSERT INTO product_cats VALUES(@ten)";
+
+                SqlCommand cmdThem = new SqlCommand(SqlINSERT, con);
+                cmdThem.Parameters.AddWithValue("ten", txtTen.Text);
+                cmdThem.ExecuteNonQuery();
+
+                con.Close();
+            }
 
             hienThiLoaiSanPham();
 
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            con.Open();
-
-            string SqlUPDATE = "UPDATE product_cats SET name = @ten WHERE cat_id = @ma";
-            SqlCommand command = new SqlCommand(SqlUPDATE, con);
-            command.Parameters.AddWithValue("ma", dgvDanhSach.SelectedRows[0].Cells[0].ToString());
-            command.Parameters.AddWithValue("ten", txtTen.Text);
-            command.ExecuteNonQuery();
-
-            con.Close();
-
-            hienThiLoaiSanPham();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult chon = MessageBox.Show("Bạn có chắc chắn muốn xóa Loại Sản Phẩm đã chọn?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(chon != DialogResult.Yes) 
+                return;
+
             con.Open();
 
             string SqlDELETE = "DELETE product_cats WHERE cat_id= @ma";
             SqlCommand command = new SqlCommand(SqlDELETE, con);
-            command.Parameters.AddWithValue("ma", dgvDanhSach.SelectedRows[0].Cells[0].ToString());
+            command.Parameters.AddWithValue("ma", dgvDanhSach.SelectedRows[0].Cells[0].Value.ToString());
             command.ExecuteNonQuery();
 
             con.Close();
@@ -95,6 +108,22 @@ namespace QuanLyBanHang.NguyenHuynhDuc
         public void xoaCacBanGhiTrenTextbox()
         {
             txtTen.Clear();
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTen.Text = dgvDanhSach.SelectedRows[0].Cells[1].Value.ToString();
+            tuyChon = "sua";
+            btnCapNhat.Text = "Cập Nhật";
+            btnThemMoi.Visible = true;
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            txtTen.Text = "";
+            tuyChon = "them";
+            btnCapNhat.Text = "Thêm";
+            btnThemMoi.Visible = false;
         }
     }
 }

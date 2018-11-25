@@ -42,9 +42,6 @@ namespace QuanLyBanHang
             User curentUser = loginBul.CheckLogin(tbUsername.Text, tbPassword.Text);
 
             if(curentUser != null) {
-                //set current user Id for Helper
-                Helper.CurrentUserId = curentUser.Id;
-
                 //open Main Form if loged in
                 if(cbRemember.Checked) {
                     Properties.Settings.Default.Username = tbUsername.Text;

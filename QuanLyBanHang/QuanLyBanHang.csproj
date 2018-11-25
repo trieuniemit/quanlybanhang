@@ -59,6 +59,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuongDucSon\NhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuongDucSon\NhanVienForm.Designer.cs">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DuongDucSon\QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuongDucSon\QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BanHangForms\BanHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DuongDucSon\NhanVienForm.resx">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuongDucSon\QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BanHangForms\BanHangForm.resx">
       <DependentUpon>BanHangForm.cs</DependentUpon>
     </EmbeddedResource>

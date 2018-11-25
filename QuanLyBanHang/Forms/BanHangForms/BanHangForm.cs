@@ -83,6 +83,10 @@ namespace QuanLyBanHang.Forms
 
             if(sp != null) {
                 tbMaSanPham.Text = "";
+                nudQuantity.Value = 1;
+
+                sp.Count = int.Parse(nudQuantity.Value.ToString());
+
                 //check if product is exitst in list
                 int productFinded = ListProduct.FindIndex(product => product.Id == sp.Id);
            

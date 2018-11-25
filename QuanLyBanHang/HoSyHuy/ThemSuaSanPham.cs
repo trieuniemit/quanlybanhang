@@ -14,10 +14,10 @@ namespace QuanLyBanHang.HoSyHuy
 {
     public partial class ThemSuaSanPham : Form
     {
-        int Ma = -1;
+        string Ma = "";
         SqlConnection con = Helper.SqlCnn;
 
-        public ThemSuaSanPham(int ma)
+        public ThemSuaSanPham(string ma)
         {
             Ma = ma;
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace QuanLyBanHang.HoSyHuy
 
             getLoaiSP();
 
-            if(Ma != -1)
+            if(Ma != "")
                 load_infor();
         }
 
@@ -87,7 +87,7 @@ namespace QuanLyBanHang.HoSyHuy
 
         private void bntLuuLai_Click_1(object sender, EventArgs e)
         {
-            if(Ma == -1 )
+            if(Ma == "" )
             {
                 ThemMoiSanPham();
             } else
@@ -117,27 +117,43 @@ namespace QuanLyBanHang.HoSyHuy
         
         void SuaSanPham()
         {
+            if(!KiemTraDuLieu()) 
+                return;
+
             con.Open();
             string update = "UPDATE products SET name=@tenSP,cat_id=@maLoaiSP,count=@soLuong,price=@donGia,promo_price=@giaKM,unit=@maDonVi,status=@tinhTrang, updated_at = CONVERT(datetime,@updated,103) WHERE id=@maSP";
             SqlCommand cmd = new SqlCommand(update, con);
 
-            cmd.Parameters.AddWithValue("maSP", int.Parse(tbMa.Text));
+            cmd.Parameters.AddWithValue("maSP", tbMa.Text);
             cmd.Parameters.AddWithValue("tenSP", tbTen.Text);
             cmd.Parameters.AddWithValue("maLoaiSP", comboBoxLoaiSP.SelectedIndex + 1);
             cmd.Parameters.AddWithValue("maDonVi", tbDonVi.Text);
             cmd.Parameters.AddWithValue("soLuong", int.Parse(tbSoLuong.Text));
             cmd.Parameters.AddWithValue("donGia", int.Parse(tbDonGia.Text));
-            cmd.Parameters.AddWithValue("giaKM", int.Parse(tbGiaKM.Text));
+            cmd.Parameters.AddWithValue("giaKM", Helper.ConvertToInt(tbGiaKM.Text));
             cmd.Parameters.AddWithValue("tinhTrang", (checkBoxStatus.Checked ? 1 : 0));
             cmd.Parameters.AddWithValue("updated", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"));
+
             cmd.ExecuteNonQuery();
+
+            //sửa mã sản phẩm tại bảng order_items để tránh phát sinh lỗi khi mã sản phẩm thay đổi
+            //if(Ma != tbMa.Text) {
+            //    SqlCommand updateMaSP = new SqlCommand("UPDATE order_items SET product_id=@maSP", con);
+            //    updateMaSP.Parameters.AddWithValue("maSP", tbMa.Text);
+            //    updateMaSP.ExecuteNonQuery();
+            //}
+
             con.Close();
+
             this.Close();
 
         }
 
         void ThemMoiSanPham()
         {
+            if(!KiemTraDuLieu()) 
+                return;
+
             con.Open();
             string add = "INSERT INTO products VALUES(@maSP,@tenSP,@maLoaiSP,@soLuong,@donGia,@giaKM,@maDonVi,@tinhTrang,CONVERT(datetime,@created, 103), CONVERT(datetime,@updated,103))";
             SqlCommand cmd = new SqlCommand(add, con);
@@ -147,13 +163,49 @@ namespace QuanLyBanHang.HoSyHuy
             cmd.Parameters.AddWithValue("maDonVi", tbDonVi.Text);
             cmd.Parameters.AddWithValue("soLuong", int.Parse(tbSoLuong.Text));
             cmd.Parameters.AddWithValue("donGia", int.Parse(tbDonGia.Text));
-            cmd.Parameters.AddWithValue("giaKM", int.Parse(tbGiaKM.Text));
+            cmd.Parameters.AddWithValue("giaKM", Helper.ConvertToInt(tbGiaKM.Text));
             cmd.Parameters.AddWithValue("tinhTrang", (checkBoxStatus.Checked ? 1 : 0));
             cmd.Parameters.AddWithValue("created", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"));
             cmd.Parameters.AddWithValue("updated", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"));
             cmd.ExecuteNonQuery();
             con.Close();
             this.Close();
+        }
+
+
+        private bool KiemTraDuLieu() {
+
+            if (tbMa.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã Sản Phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTen.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên Sản Phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+            if(tbDonVi.Text =="")
+            { 
+                MessageBox.Show("Vui lòng nhập đơn vị cho sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbSoLuong.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số lượng sản phẩm! ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbDonGia.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá cho sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

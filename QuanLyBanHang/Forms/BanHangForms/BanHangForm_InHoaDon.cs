@@ -31,9 +31,9 @@ namespace QuanLyBanHang.Forms {
 
             //set parameter for report
             rpvHoaDonBanHang.LocalReport.SetParameters(new ReportParameter[] {
-                new ReportParameter("TenCuaHang", "Cửa hàng Tạp hóa Sinh Viên"),
-                new ReportParameter("DiaChi", "Ký túc xá, nhà A13, trường DH Công nghiệp Hà Nội"),
-                new ReportParameter("SoDienThoai", "0395710844"),
+                new ReportParameter("TenCuaHang", Properties.Settings.Default.StoreName),
+                new ReportParameter("DiaChi", Properties.Settings.Default.Address),
+                new ReportParameter("SoDienThoai", Properties.Settings.Default.NumberPhone),
                 new ReportParameter("SoHoaDon", Order.Id.ToString("D10")),
                 new ReportParameter("TenNhanVien", CurrentUser.Fullname),
                 new ReportParameter("NgayLap", Helper.GetDateNow("dd/MM/yyyy - HH:mm")),

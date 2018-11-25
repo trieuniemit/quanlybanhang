@@ -29,27 +29,26 @@ namespace QuanLyBanHang
 
             InitializeComponent();
 
-            //test data
-            CurrentUser = new User(
-                1,
-                "trieuniemit",
-                "Triệu Tài Niêm",
-                "81dc9bdb52d04dc20036dbd8313ed055",
-                "0395710844",
-                "trieuniemit@gmail.com",
-                1,
-                0,
-                "08-02-1998",
-                "20-10-2018"
-            );
-            //CurrentUser = logedInUser;
+            ////test data
+            //CurrentUser = new User(
+            //    1,
+            //    "trieuniemit",
+            //    "Triệu Tài Niêm",
+            //    "81dc9bdb52d04dc20036dbd8313ed055",
+            //    "0395710844",
+            //    "trieuniemit@gmail.com",
+            //    2,
+            //    0,
+            //    "08-02-1998",
+            //    "20-10-2018"
+            //);
+            CurrentUser = logedInUser;
 
             lbUserName.Text = CurrentUser.Fullname;
             lbPosition.Text = Helper.GetUserRole(CurrentUser.Role);
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-
             //add event
             this.tabMain.DrawMode = TabDrawMode.OwnerDrawFixed;
             this.tabMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabMain_DrawItem);
@@ -63,6 +62,15 @@ namespace QuanLyBanHang
 
             //set padding for tab header
             tabMain.Padding = new Point(40);
+
+            if(CurrentUser.Role > 1) {
+                parentCaiDat.Visible = false;
+                parentNhanVien.Visible = false;
+                parentThongKe.Visible = false;
+                toolStripSeparator3.Visible = false;
+                toolStripSeparator4.Visible = false;
+                toolStripSeparator5.Visible = false;
+            }
 
         }
 
@@ -181,12 +189,17 @@ namespace QuanLyBanHang
 
         private void parentCaNhan_Click(object sender, EventArgs e)
         {
-            AddNewTab(new NguyenHuynhDuc.SuaThongTinCaNhan());
+            AddNewTab(new NguyenHuynhDuc.SuaThongTinCaNhan(CurrentUser.Id));
         }
 
         private void itemLoaiSanPham_Click(object sender, EventArgs e)
         {
             AddNewTab(new NguyenHuynhDuc.QuanLyLoaiSanPham());
+        }
+
+        private void parentNhanVien_Click(object sender, EventArgs e)
+        {
+            AddNewTab(new DuongDucSon.QuanLyNhanVien(CurrentUser.Id));
         }
 
     }

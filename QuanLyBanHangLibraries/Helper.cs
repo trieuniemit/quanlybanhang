@@ -26,8 +26,6 @@ namespace QuanLyBanHangLibraries
     {
         public static SqlConnection SqlCnn = new SqlConnection(ConfigurationManager.AppSettings["sqlConnectString"]);
 
-        public static int CurrentUserId {get; set;}
-
         public static void Gradient(System.Drawing.Graphics graphics, int width, int height, System.Drawing.Color formColor, System.Drawing.Color toColor, float deg) {
             System.Drawing.Rectangle gradient_rectangle = new System.Drawing.Rectangle(0, 0, width, height);
             System.Drawing.Brush b = new System.Drawing.Drawing2D.LinearGradientBrush(gradient_rectangle, formColor, toColor, deg);
@@ -74,6 +72,20 @@ namespace QuanLyBanHangLibraries
             }
 
             return roleName;
+        }
+
+        public static string GetGenderName(int gender) {
+            string genderName = "";
+            switch(gender) {
+                case 0: 
+                    genderName = "Nam";
+                    break;
+                case 1: 
+                    genderName = "Nữ";
+                    break;
+            }
+
+            return genderName;
         }
 
     }

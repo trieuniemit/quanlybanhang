@@ -49,12 +49,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // tbTotal
@@ -187,6 +189,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.nudQuantity);
             this.panel3.Controls.Add(this.cbExport);
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Controls.Add(this.tbMaSanPham);
@@ -224,7 +227,7 @@
             // 
             this.ptbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbAdd.Image = global::QuanLyBanHang.Properties.Resources.plus;
-            this.ptbAdd.Location = new System.Drawing.Point(304, 18);
+            this.ptbAdd.Location = new System.Drawing.Point(338, 17);
             this.ptbAdd.Name = "ptbAdd";
             this.ptbAdd.Size = new System.Drawing.Size(31, 30);
             this.ptbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +240,7 @@
             // 
             this.ptbRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbRemove.Image = global::QuanLyBanHang.Properties.Resources.remove;
-            this.ptbRemove.Location = new System.Drawing.Point(338, 19);
+            this.ptbRemove.Location = new System.Drawing.Point(372, 18);
             this.ptbRemove.Name = "ptbRemove";
             this.ptbRemove.Size = new System.Drawing.Size(27, 27);
             this.ptbRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -264,7 +267,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvListProduct.Location = new System.Drawing.Point(0, 35);
+            this.dgvListProduct.Location = new System.Drawing.Point(0, 41);
             this.dgvListProduct.Margin = new System.Windows.Forms.Padding(10);
             this.dgvListProduct.Name = "dgvListProduct";
             this.dgvListProduct.ReadOnly = true;
@@ -289,7 +292,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(10, 10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(972, 142);
+            this.panel4.Size = new System.Drawing.Size(972, 136);
             this.panel4.TabIndex = 16;
             // 
             // panel5
@@ -297,9 +300,9 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.dgvListProduct);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(10, 152);
+            this.panel5.Location = new System.Drawing.Point(10, 146);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(972, 325);
+            this.panel5.Size = new System.Drawing.Size(972, 331);
             this.panel5.TabIndex = 17;
             // 
             // label3
@@ -309,13 +312,26 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(0, 3);
+            this.label3.Location = new System.Drawing.Point(0, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.label3.Size = new System.Drawing.Size(217, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Sản phẩm trong đơn hàng";
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudQuantity.Location = new System.Drawing.Point(290, 20);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(42, 26);
+            this.nudQuantity.TabIndex = 15;
+            this.nudQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // BanHangForm
             // 
@@ -344,6 +360,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,6 +387,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudQuantity;
 
     }
 }
