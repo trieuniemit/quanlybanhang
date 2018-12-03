@@ -58,18 +58,6 @@ namespace QuanLyBanHang.NguyenHuynhDuc
             con.Close();
         }
 
-        private void ktra(CheckBox rdbNam,CheckBox rdbNu)
-        {
-            try
-            {
-                rdbNam.Checked = false;
-                rdbNu.Checked = false;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Mời chọn giới tính","Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-        }
 
 
         private void btnSua_Click(object sender, EventArgs e)

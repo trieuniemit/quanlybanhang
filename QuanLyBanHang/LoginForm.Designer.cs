@@ -99,10 +99,11 @@
             // 
             this.pbClose.BackColor = System.Drawing.Color.Transparent;
             this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbClose.Image = global::QuanLyBanHang.Properties.Resources.icon_close;
+            this.pbClose.Image = global::QuanLyBanHang.Properties.Resources.remove;
             this.pbClose.Location = new System.Drawing.Point(480, 3);
             this.pbClose.Name = "pbClose";
             this.pbClose.Size = new System.Drawing.Size(26, 25);
+            this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbClose.TabIndex = 5;
             this.pbClose.TabStop = false;
             this.pbClose.Click += new System.EventHandler(this.pbClose_Click);

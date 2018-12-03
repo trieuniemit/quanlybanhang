@@ -57,6 +57,7 @@ namespace QuanLyBanHang
                 this.Hide();
                 MainForm mainForm = new MainForm(curentUser);
                 mainForm.ShowDialog();
+
                 this.Close();
 
             } else {

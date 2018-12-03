@@ -88,7 +88,7 @@ namespace QuanLyBanHang
             // 
             this.lbPosition.AutoSize = true;
             this.lbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPosition.Location = new System.Drawing.Point(995, 20);
+            this.lbPosition.Location = new System.Drawing.Point(978, 18);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(59, 13);
             this.lbPosition.TabIndex = 15;
@@ -96,11 +96,10 @@ namespace QuanLyBanHang
             // 
             // lbUserName
             // 
-            this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(873, 15);
+            this.lbUserName.Location = new System.Drawing.Point(806, 15);
             this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(106, 20);
+            this.lbUserName.Size = new System.Drawing.Size(173, 20);
             this.lbUserName.TabIndex = 14;
             this.lbUserName.Text = "<Họ và tên>";
             this.lbUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,7 +146,7 @@ namespace QuanLyBanHang
             this.tsMainMenu.Location = new System.Drawing.Point(1, 0);
             this.tsMainMenu.Name = "tsMainMenu";
             this.tsMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.tsMainMenu.Size = new System.Drawing.Size(662, 73);
+            this.tsMainMenu.Size = new System.Drawing.Size(631, 73);
             this.tsMainMenu.TabIndex = 8;
             this.tsMainMenu.Text = "toolStrip1";
             // 

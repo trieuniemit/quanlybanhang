@@ -126,7 +126,7 @@ namespace QuanLyBanHang.HoSyHuy
 
             cmd.Parameters.AddWithValue("maSP", tbMa.Text);
             cmd.Parameters.AddWithValue("tenSP", tbTen.Text);
-            cmd.Parameters.AddWithValue("maLoaiSP", comboBoxLoaiSP.SelectedIndex + 1);
+            cmd.Parameters.AddWithValue("maLoaiSP", (comboBoxLoaiSP.SelectedItem as dynamic).Value);
             cmd.Parameters.AddWithValue("maDonVi", tbDonVi.Text);
             cmd.Parameters.AddWithValue("soLuong", int.Parse(tbSoLuong.Text));
             cmd.Parameters.AddWithValue("donGia", int.Parse(tbDonGia.Text));
@@ -155,12 +155,13 @@ namespace QuanLyBanHang.HoSyHuy
                 return;
 
             con.Open();
-            string add = "INSERT INTO products VALUES(@maSP,@tenSP,@maLoaiSP,@soLuong,@donGia,@giaKM,@maDonVi,@tinhTrang,CONVERT(datetime,@created, 103), CONVERT(datetime,@updated,103))";
+
+            string add = "INSERT INTO products VALUES(@maSP,@tenSP,@maLoaiSP,@soLuong,@donGia,@donVi,@tinhTrang,CONVERT(datetime,@created, 103), @giaKM, CONVERT(datetime,@updated,103))";
             SqlCommand cmd = new SqlCommand(add, con);
             cmd.Parameters.AddWithValue("maSP", int.Parse(tbMa.Text));
             cmd.Parameters.AddWithValue("tenSP", tbTen.Text);
-            cmd.Parameters.AddWithValue("maLoaiSP", comboBoxLoaiSP.SelectedIndex + 1);
-            cmd.Parameters.AddWithValue("maDonVi", tbDonVi.Text);
+            cmd.Parameters.AddWithValue("maLoaiSP", (comboBoxLoaiSP.SelectedItem as dynamic).Value);
+            cmd.Parameters.AddWithValue("donVi", tbDonVi.Text);
             cmd.Parameters.AddWithValue("soLuong", int.Parse(tbSoLuong.Text));
             cmd.Parameters.AddWithValue("donGia", int.Parse(tbDonGia.Text));
             cmd.Parameters.AddWithValue("giaKM", Helper.ConvertToInt(tbGiaKM.Text));
@@ -168,6 +169,7 @@ namespace QuanLyBanHang.HoSyHuy
             cmd.Parameters.AddWithValue("created", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"));
             cmd.Parameters.AddWithValue("updated", DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"));
             cmd.ExecuteNonQuery();
+            
             con.Close();
             this.Close();
         }

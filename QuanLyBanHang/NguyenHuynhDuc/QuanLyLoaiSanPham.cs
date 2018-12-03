@@ -79,6 +79,7 @@ namespace QuanLyBanHang.NguyenHuynhDuc
                 cmdThem.Parameters.AddWithValue("ten", txtTen.Text);
                 cmdThem.ExecuteNonQuery();
 
+                txtTen.Text = "";
                 con.Close();
             }
 
@@ -95,10 +96,15 @@ namespace QuanLyBanHang.NguyenHuynhDuc
 
             con.Open();
 
-            string SqlDELETE = "DELETE product_cats WHERE cat_id= @ma";
-            SqlCommand command = new SqlCommand(SqlDELETE, con);
-            command.Parameters.AddWithValue("ma", dgvDanhSach.SelectedRows[0].Cells[0].Value.ToString());
-            command.ExecuteNonQuery();
+            try{
+                string SqlDELETE = "DELETE product_cats WHERE cat_id= @ma";
+                SqlCommand command = new SqlCommand(SqlDELETE, con);
+                command.Parameters.AddWithValue("ma", dgvDanhSach.SelectedRows[0].Cells[0].Value.ToString());
+                command.ExecuteNonQuery();
+            } catch(SqlException err) {
+                MessageBox.Show("Không thể xóa loại sản phẩm này, do đang được sử dụng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine(err.ToString());
+            }
 
             con.Close();
 

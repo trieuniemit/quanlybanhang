@@ -126,7 +126,7 @@ namespace QuanLyBanHang
 
                 //draw icon
                 e.Graphics.DrawImage(CloseTabActive, imageRect);
-                tabHeaderFont = new Font("Arial", 12, FontStyle.Bold);
+                tabHeaderFont = new Font("Arial", 11, FontStyle.Bold);
                
                 //draw text
                 e.Graphics.DrawString(tabMain.TabPages[e.Index].Text, tabHeaderFont, Brushes.Black, rect, tabStringFormat);
@@ -136,7 +136,7 @@ namespace QuanLyBanHang
 
                  //draw icon
                 e.Graphics.DrawImage(CloseTab, imageRect);
-                tabHeaderFont = new Font("Arial", 12, FontStyle.Regular);
+                tabHeaderFont = new Font("Arial", 11, FontStyle.Regular);
 
                 //draw text
                 e.Graphics.DrawString(tabMain.TabPages[e.Index].Text, tabHeaderFont, Brushes.Black, rect, tabStringFormat);

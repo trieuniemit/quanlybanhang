@@ -88,13 +88,15 @@ namespace QuanLyBanHang.HoSyHuy
             if(kq == DialogResult.Yes) {
                 con.Open();
                 int index = dgvDS.CurrentRow.Index;
+
                 try {
                     SqlCommand cmd = new SqlCommand("DELETE FROM products WHERE id = @maSP",con);
 
                     cmd.Parameters.AddWithValue("maSP",dgvDS.Rows[index].Cells[0].Value.ToString());
                     cmd.ExecuteNonQuery();
+
                 } catch(SqlException err) {
-                    MessageBox.Show("Không thể xóa sản phẩm này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không thể xóa sản phẩm này, do đang được sử dụng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Console.WriteLine(err.ToString());
                 }
                 con.Close();
