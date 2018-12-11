@@ -18,7 +18,7 @@ using QuanLyBanHangDTOs;
  *
  */
 
-namespace QuanLyBanHang.HoSyHuy
+namespace QuanLyBanHang.Forms
 {
     public partial class BanHangForm_LichSuBanHang : Form
     {
@@ -132,8 +132,19 @@ namespace QuanLyBanHang.HoSyHuy
             User currentOrderUser = donHangDaBanBul.GetOrderUser(currentOrder.Created_by);
             List<SanPham> products = donHangDaBanBul.GetProductsInOrder(currentOrder.Id);
 
-            HoSyHuy.BanHangForm_InHoaDon detailForm = new BanHangForm_InHoaDon(currentOrder, products, currentOrderUser);
+            Forms.BanHangForm_InHoaDon detailForm = new BanHangForm_InHoaDon(currentOrder, products, currentOrderUser);
             detailForm.ShowDialog();
+        }
+
+        private void btnTimMa_Click(object sender, EventArgs e)
+        {
+            dgvBanHangHistory.Rows.Clear();
+
+            int filterByID = int.Parse(tbMaDonHang.Text==""?"0":tbMaDonHang.Text);
+
+            List<object> returnedData = donHangDaBanBul.GetByID(filterByID);
+
+            ShowDataGridViewData(returnedData);
         }
 
     }

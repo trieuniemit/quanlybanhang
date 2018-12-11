@@ -20,7 +20,7 @@ using QuanLyBanHangLibraries;
  *
  */
 
-namespace QuanLyBanHang.HoSyHuy
+namespace QuanLyBanHang.Forms
 {
     public partial class BanHangForm : Form
     {
@@ -83,16 +83,15 @@ namespace QuanLyBanHang.HoSyHuy
 
             if(sp != null) {
                 tbMaSanPham.Text = "";
-                nudQuantity.Value = 1;
 
-                sp.Count = int.Parse(nudQuantity.Value.ToString());
+                sp.Count = int.Parse(nudQuantity.Value.ToString());                
 
                 //check if product is exitst in list
                 int productFinded = ListProduct.FindIndex(product => product.Id == sp.Id);
            
                 if(productFinded > -1) {
                     //change quantity if found
-                    ListProduct[productFinded].Count++;
+                    ListProduct[productFinded].Count += sp.Count;
                     dgvListProduct.Rows[productFinded].Cells[4].Value = ListProduct[productFinded].Count;
                     int currency = ListProduct[productFinded].Count*ListProduct[productFinded].Price;
                     dgvListProduct.Rows[productFinded].Cells[6].Value = Helper.CurrencyFormat(currency.ToString());
@@ -106,6 +105,7 @@ namespace QuanLyBanHang.HoSyHuy
 
                 //clear text box
                 tbMaSanPham.Text = "";
+                nudQuantity.Value = 1;
             } else {
                 MessageBox.Show("Mã sản phẩm không chính xác!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -151,16 +151,17 @@ namespace QuanLyBanHang.HoSyHuy
                 Order order =  new Order(-1, tbKhachHang.Text, tbSoDienThoai.Text, deposits, CurrentUser.Id, null, Helper.ConvertToInt(tbTotal.Text));
 
                 //call to BUL method
-                bool isSuccess = BanHangBul.SaveOrderAndExportData(ListProduct, order);
+                int currentOrderID = BanHangBul.SaveOrderAndExportData(ListProduct, order);
+                order.Id = currentOrderID;
 
-                if(!isSuccess) {
+                if(currentOrderID == -1) {
                     MessageBox.Show("Có lỗi trong quá trình lưu dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 //open report viewer if check
                 if(cbExport.Checked)  {
-                    HoSyHuy.BanHangForm_InHoaDon InHoaDon = new HoSyHuy.BanHangForm_InHoaDon(order, ListProduct, CurrentUser);
+                    Forms.BanHangForm_InHoaDon InHoaDon = new Forms.BanHangForm_InHoaDon(order, ListProduct, CurrentUser);
                     InHoaDon.ShowDialog();
                 } else {
                     MessageBox.Show("Đã lưu dữ liệu của đơn hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

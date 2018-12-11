@@ -24,7 +24,7 @@ namespace QuanLyBanHang.HoSyHuy
         
         private int DemSoDongTrongBang(string table) {
             int tongSoDong = 0;
-            SqlCommand countRowsCmd = new SqlCommand("SELECT COUNT(*) FROM "+table, Helper.SqlCnn);
+            SqlCommand countRowsCmd = new SqlCommand("SELECT COUNT(*) FROM "+table, conn);
 
             conn.Open();
             try {
@@ -43,7 +43,7 @@ namespace QuanLyBanHang.HoSyHuy
             int tongDoanhThu = 0;
             conn.Open();
 
-            SqlCommand demTongDoanhThuCmd = new SqlCommand("SELECT SUM(total) FROM orders", Helper.SqlCnn);
+            SqlCommand demTongDoanhThuCmd = new SqlCommand("SELECT SUM(total) FROM orders", conn);
 
             try {
                 tongDoanhThu = int.Parse(demTongDoanhThuCmd.ExecuteScalar().ToString());
@@ -65,7 +65,7 @@ namespace QuanLyBanHang.HoSyHuy
             string startDate = year + "-" + month + "-1 00:00:00";
             string endDate = year + "-" + month+ "-" + daysOfMonth + " 23:59:59";
 
-            SqlCommand demDoanhThuThangCmd = new SqlCommand("SELECT SUM(total) FROM orders WHERE created_at >= '"+startDate + "' AND created_at < '" + endDate +"'" , Helper.SqlCnn);
+            SqlCommand demDoanhThuThangCmd = new SqlCommand("SELECT SUM(total) FROM orders WHERE created_at >= '"+startDate + "' AND created_at < '" + endDate +"'" , conn);
 
             try {
                 string ketQua = demDoanhThuThangCmd.ExecuteScalar().ToString();
@@ -89,7 +89,7 @@ namespace QuanLyBanHang.HoSyHuy
 
             conn.Open();
 
-            SqlCommand getYears = new SqlCommand("SELECT MIN(created_at) AS min, MAX(created_at) AS max FROM orders", Helper.SqlCnn);
+            SqlCommand getYears = new SqlCommand("SELECT MIN(created_at) AS min, MAX(created_at) AS max FROM orders", conn);
             SqlDataReader dr = getYears.ExecuteReader();
             
             while(dr.Read()) {
@@ -123,6 +123,23 @@ namespace QuanLyBanHang.HoSyHuy
             dgvDoanhThu.ColumnCount = 2;
             dgvDoanhThu.Columns[0].HeaderText = "Tháng/Năm";
             dgvDoanhThu.Columns[1].HeaderText = "Doanh Thu";
+
+            dgvDoanhThu.Rows.Clear();
+
+            DateTime namHienTai = DateTime.Now;
+            if(year == namHienTai.Year) {
+                for(int i = 1; i <= namHienTai.Month; i++) {
+                    int doanhThuThang = LayDoanhThuCuaMotThangTheoNam(year, i);
+                    dgvDoanhThu.Rows.Add("Tháng " + i + "/"+year, Helper.CurrencyFormat(doanhThuThang.ToString()));
+                }
+            } else {
+                for(int i = 1; i <= 12; i++) {
+                    int doanhThuThang = LayDoanhThuCuaMotThangTheoNam(year, i);
+                    dgvDoanhThu.Rows.Add("Tháng " + i + "/"+year, Helper.CurrencyFormat(doanhThuThang.ToString()));
+                }
+            }
+
+            
         }
 
         private void ThongKeForm_Load(object sender, EventArgs e)

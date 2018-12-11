@@ -50,7 +50,7 @@ namespace QuanLyBanHangDALs
         } 
 
 
-        public bool SaveOrderToDatbase(List<SanPham> products, Order order) {
+        public int SaveOrderToDatbase(List<SanPham> products, Order order) {
             Helper.SqlCnn.Open();
 
             //insert to order table
@@ -73,7 +73,7 @@ namespace QuanLyBanHangDALs
 
                 Console.WriteLine(e.ToString());
 
-                return false;
+                return -1;
             }
 
             //insert to order_items table
@@ -87,13 +87,13 @@ namespace QuanLyBanHangDALs
                     Console.WriteLine("Can't to insert to database!, SQL command: "+sqlString);
                     Helper.SqlCnn.Close();
 
-                    return false;
+                    return -1;
                 }
             }
 
             Helper.SqlCnn.Close();
 
-            return true;
+            return int.Parse(newestOrderId);
         }
     }
 }

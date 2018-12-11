@@ -30,7 +30,7 @@ namespace QuanLyBanHang.NguyenHuynhDuc
      
 
         public int KiemTraDangNhap(string tenDangNhap, string matKhau) {
-            SqlCommand getUserCmd = new SqlCommand("SELECT * FROM users WHERE username = @user AND password = @pwd", Helper.SqlCnn);
+            SqlCommand getUserCmd = new SqlCommand("SELECT * FROM users WHERE username = @user AND password = @pwd", conn);
 
             getUserCmd.Parameters.AddWithValue("user", tenDangNhap);
             //ma hoa mat khau truoc khi kiem tra

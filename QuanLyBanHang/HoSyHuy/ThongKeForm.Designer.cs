@@ -347,6 +347,7 @@
             this.dgvDoanhThu.Location = new System.Drawing.Point(6, 15);
             this.dgvDoanhThu.Name = "dgvDoanhThu";
             this.dgvDoanhThu.RowHeadersVisible = false;
+            this.dgvDoanhThu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDoanhThu.Size = new System.Drawing.Size(546, 560);
             this.dgvDoanhThu.TabIndex = 2;
             this.dgvDoanhThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDoanhThu_CellContentClick);

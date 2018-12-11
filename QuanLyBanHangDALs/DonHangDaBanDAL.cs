@@ -123,6 +123,39 @@ namespace QuanLyBanHangDALs
         }
 
 
+        public List<Order> FilterByID(int filterById) {
+            List<Order> listOrder = new List<Order>();
+
+            Helper.SqlCnn.Open();
+            string sqlGetOrderCmd = "SELECT * FROM orders WHERE id LIKE @filterID";
+
+            SqlCommand getOrdersCmd = new SqlCommand(sqlGetOrderCmd, Helper.SqlCnn);
+            getOrdersCmd.Parameters.AddWithValue("filterID", "%"+filterById+"%");
+
+            try {
+                SqlDataReader reader = getOrdersCmd.ExecuteReader();
+            
+                while(reader.Read()) {
+                    Order order = new Order(
+                            int.Parse(reader["id"].ToString()),
+                            reader["customer"].ToString(),
+                            reader["customer_phone"].ToString(),
+                            Convert.ToInt32(reader["deposits"]),
+                            int.Parse(reader["created_by"].ToString()),
+                            Convert.ToDateTime(reader["created_at"]).ToString("HH:mm - dd/MM/yyyy"),
+                            int.Parse(reader["total"].ToString())
+                        );
+                    listOrder.Add(order);
+                }
+            } catch(SqlException e) {
+                Console.WriteLine(e.ToString());
+            }
+
+            Helper.SqlCnn.Close();
+
+            return listOrder;
+        }
+
         //get products in an order
         public List<SanPham> GetProductsInOrder(int orderId) {
 

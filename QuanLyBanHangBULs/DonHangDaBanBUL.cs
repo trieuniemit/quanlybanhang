@@ -40,6 +40,25 @@ namespace QuanLyBanHangBULs
 
         }
         
+
+        public List<object> GetByID(int filterByID) {
+            List<object> returnData = new List<object> ();
+
+            List<string[]> rowList = new List<string[]>();
+            List<Order> orderList = OrdersDal.FilterByID(filterByID);
+
+            foreach(Order order in orderList) {
+                User user = OrdersDal.GetOrderUser(order.Created_by);
+                string[] row = {order.Id.ToString(), order.Created_at, order.Customer, order.Customer_phone, Helper.CurrencyFormat(order.Total.ToString()), Helper.CurrencyFormat(order.Deposits.ToString()), user.Fullname};
+                rowList.Add(row);
+            }
+
+            returnData.Add(rowList);
+            returnData.Add(orderList);
+
+            return returnData;
+
+        }
         public List<SanPham> GetProductsInOrder(int orderId) {
             return OrdersDal.GetProductsInOrder(orderId);
         }

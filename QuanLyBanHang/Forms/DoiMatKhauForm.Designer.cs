@@ -1,4 +1,4 @@
-﻿namespace QuanLyBanHang.HoSyHuy
+﻿namespace QuanLyBanHang.Forms
 {
     partial class DoiMatKhauForm
     {

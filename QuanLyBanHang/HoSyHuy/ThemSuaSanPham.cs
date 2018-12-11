@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyBanHangLibraries;
 
-namespace QuanLyBanHang.HoSyHuy
+namespace QuanLyBanHang.Forms
 {
     public partial class ThemSuaSanPham : Form
     {

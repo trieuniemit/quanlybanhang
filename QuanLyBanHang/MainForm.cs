@@ -165,12 +165,12 @@ namespace QuanLyBanHang
 
         private void itemBanHang_Click(object sender, EventArgs e)
         {
-            AddNewTab(new HoSyHuy.BanHangForm(CurrentUser));
+            AddNewTab(new Forms.BanHangForm(CurrentUser));
         }
 
         private void parentBanHang_DoubleClick(object sender, EventArgs e)
         {
-            AddNewTab(new HoSyHuy.BanHangForm(CurrentUser));
+            AddNewTab(new Forms.BanHangForm(CurrentUser));
         }
 
         private void lbLogout_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ namespace QuanLyBanHang
 
         private void itemLichSu_Click(object sender, EventArgs e)
         {
-            AddNewTab(new HoSyHuy.BanHangForm_LichSuBanHang());
+            AddNewTab(new Forms.BanHangForm_LichSuBanHang());
         }
 
         private void parentThongKe_Click(object sender, EventArgs e)
@@ -190,17 +190,17 @@ namespace QuanLyBanHang
 
         private void itemSanPham_Click(object sender, EventArgs e)
         {
-            AddNewTab(new HoSyHuy.QuanLySanPhamForm());
+            AddNewTab(new Forms.QuanLySanPhamForm());
         }
 
         private void parentSanPham_DoubleClick(object sender, EventArgs e)
         {
-             AddNewTab(new HoSyHuy.QuanLySanPhamForm());
+             AddNewTab(new Forms.QuanLySanPhamForm());
         }
 
         private void parentCaiDat_Click(object sender, EventArgs e)
         {
-            AddNewTab(new HoSyHuy.CaiDatForm());
+            AddNewTab(new Forms.CaiDatForm());
         }
 
         private void parentCaNhan_Click(object sender, EventArgs e)

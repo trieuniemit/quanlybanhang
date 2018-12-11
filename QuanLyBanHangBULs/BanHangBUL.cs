@@ -35,7 +35,7 @@ namespace QuanLyBanHangBULs {
             return total;
         }
 
-        public bool SaveOrderAndExportData(List<SanPham> products, Order order) {
+        public int SaveOrderAndExportData(List<SanPham> products, Order order) {
             //call to save to database method
             return BanHangDal.SaveOrderToDatbase(products, order);
         }

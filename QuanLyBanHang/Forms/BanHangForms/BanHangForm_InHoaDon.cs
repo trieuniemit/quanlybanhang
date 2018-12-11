@@ -12,7 +12,7 @@ using QuanLyBanHangDTOs;
 using QuanLyBanHangLibraries;
 using QuanLyBanHangBULs;
 
-namespace QuanLyBanHang.HoSyHuy {
+namespace QuanLyBanHang.Forms {
 
     public partial class BanHangForm_InHoaDon : Form {
         Order Order;
