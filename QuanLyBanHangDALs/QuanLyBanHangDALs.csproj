@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="BanHangDAL.cs" />
     <Compile Include="DonHangDaBanDAL.cs" />
-    <Compile Include="LoginDAL.cs" />
+    <Compile Include="GetUserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThongKeDAL.cs" />
   </ItemGroup>

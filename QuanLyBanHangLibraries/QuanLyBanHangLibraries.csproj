@@ -42,16 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\FormNoneHeader.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Classes\FormNoneHeader.resx">
-      <DependentUpon>FormNoneHeader.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

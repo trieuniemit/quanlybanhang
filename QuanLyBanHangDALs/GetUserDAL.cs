@@ -1,18 +1,18 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using QuanLyBanHangDTOs;
 using QuanLyBanHangLibraries;
-using QuanLyBanHangDTOs;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace QuanLyBanHangDALs
 {
-    public class LoginDAL {
-
-        public User CheckLogin(string username, string password) {
-            SqlCommand getUserCmd = new SqlCommand("SELECT * FROM users WHERE username = @user AND password = @pwd", Helper.SqlCnn);
-
-            getUserCmd.Parameters.AddWithValue("user", username);
-            getUserCmd.Parameters.AddWithValue("pwd", Helper.MD5Hash(password));
-
+    public class GetUserDAL
+    {
+        public User GetCurrentUser(int userID) {
+            SqlCommand getUserCmd = new SqlCommand("SELECT * FROM users WHERE id="+userID, Helper.SqlCnn);
             Helper.SqlCnn.Open();
             SqlDataReader reader = getUserCmd.ExecuteReader();
 
@@ -37,6 +37,5 @@ namespace QuanLyBanHangDALs
 
             return userInfo;
         }
-
     }
 }

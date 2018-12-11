@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyBanHangLibraries;
 using QuanLyBanHangDTOs;
-
+using QuanLyBanHangBULs;
 /**
  * 
  *@ Author: Trieu Tai Niem 
@@ -25,7 +25,9 @@ namespace QuanLyBanHang
         private Image CloseTab, CloseTabActive;
         private User CurrentUser;
 
-        public MainForm(User logedInUser = null) {
+        private GetUserBUL GetUserBul = new GetUserBUL();
+
+        public MainForm(int logedInUser = -1) {
 
             InitializeComponent();
 
@@ -42,7 +44,8 @@ namespace QuanLyBanHang
             //    "08-02-1998",
             //    "20-10-2018"
             //);
-            CurrentUser = logedInUser;
+
+            CurrentUser = GetUserBul.getCurrentUser(logedInUser);
 
             lbUserName.Text = CurrentUser.Fullname;
             lbPosition.Text = Helper.GetUserRole(CurrentUser.Role);

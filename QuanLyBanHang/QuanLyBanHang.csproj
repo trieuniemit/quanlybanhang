@@ -125,11 +125,11 @@
     <Compile Include="IntroduceForm.Designer.cs">
       <DependentUpon>IntroduceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="NguyenHuynhDuc\DangNhapForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="NguyenHuynhDuc\DangNhapForm.Designer.cs">
+      <DependentUpon>DangNhapForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -195,8 +195,8 @@
     <EmbeddedResource Include="IntroduceForm.resx">
       <DependentUpon>IntroduceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="NguyenHuynhDuc\DangNhapForm.resx">
+      <DependentUpon>DangNhapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
