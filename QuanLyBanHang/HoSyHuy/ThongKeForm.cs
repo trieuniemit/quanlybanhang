@@ -68,9 +68,9 @@ namespace QuanLyBanHang.HoSyHuy
             SqlCommand demDoanhThuThangCmd = new SqlCommand("SELECT SUM(total) FROM orders WHERE created_at >= '"+startDate + "' AND created_at < '" + endDate +"'" , Helper.SqlCnn);
 
             try {
-                string ketqua = demDoanhThuThangCmd.ExecuteScalar().ToString();
-                if(ketqua != "") 
-                    doanhThu = int.Parse(ketqua);
+                string ketQua = demDoanhThuThangCmd.ExecuteScalar().ToString();
+                if(ketQua != "") 
+                    doanhThu = int.Parse(ketQua);
 
             } catch (SqlException e) {
                 Console.WriteLine(e.ToString());
@@ -120,7 +120,9 @@ namespace QuanLyBanHang.HoSyHuy
         }
 
         private void KhoiTaoDataGridView(int year) {
-            
+            dgvDoanhThu.ColumnCount = 2;
+            dgvDoanhThu.Columns[0].HeaderText = "Tháng/Năm";
+            dgvDoanhThu.Columns[1].HeaderText = "Doanh Thu";
         }
 
         private void ThongKeForm_Load(object sender, EventArgs e)
@@ -133,6 +135,11 @@ namespace QuanLyBanHang.HoSyHuy
         {
             int year = Convert.ToInt32((cbbDoanhThuTheoNam.SelectedItem as dynamic).Value);
             KhoiTaoDataGridView(year);
+        }
+
+        private void dvgDoanhThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

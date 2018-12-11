@@ -53,7 +53,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,9 +90,9 @@
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(661, 15);
+            this.panel1.Location = new System.Drawing.Point(622, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 560);
+            this.panel1.Size = new System.Drawing.Size(399, 560);
             this.panel1.TabIndex = 1;
             // 
             // cbbDoanhThuTheoNam
@@ -313,7 +313,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(360, 560);
+            this.shapeContainer1.Size = new System.Drawing.Size(399, 560);
             this.shapeContainer1.TabIndex = 2;
             this.shapeContainer1.TabStop = false;
             // 
@@ -333,15 +333,23 @@
             this.lineShape1.Y1 = 57;
             this.lineShape1.Y2 = 57;
             // 
-            // dataGridView1
+            // dgvDoanhThu
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(649, 560);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvDoanhThu.AllowUserToAddRows = false;
+            this.dgvDoanhThu.AllowUserToDeleteRows = false;
+            this.dgvDoanhThu.AllowUserToOrderColumns = true;
+            this.dgvDoanhThu.AllowUserToResizeColumns = false;
+            this.dgvDoanhThu.AllowUserToResizeRows = false;
+            this.dgvDoanhThu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDoanhThu.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoanhThu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvDoanhThu.Location = new System.Drawing.Point(6, 15);
+            this.dgvDoanhThu.Name = "dgvDoanhThu";
+            this.dgvDoanhThu.RowHeadersVisible = false;
+            this.dgvDoanhThu.Size = new System.Drawing.Size(546, 560);
+            this.dgvDoanhThu.TabIndex = 2;
+            this.dgvDoanhThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDoanhThu_CellContentClick);
             // 
             // ThongKeForm
             // 
@@ -350,7 +358,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1027, 581);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDoanhThu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThongKeForm";
@@ -366,7 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,7 +406,7 @@
         private System.Windows.Forms.Label lbTongDoanhThu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbDoanhThuTheoNam;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDoanhThu;
 
 
     }
