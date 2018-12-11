@@ -101,10 +101,10 @@
     <Compile Include="Forms\DoiMatKhauForm.Designer.cs">
       <DependentUpon>DoiMatKhauForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ThongKeForm.cs">
+    <Compile Include="HoSyHuy\ThongKeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ThongKeForm.Designer.cs">
+    <Compile Include="HoSyHuy\ThongKeForm.Designer.cs">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HoSyHuy\QuanLySanPhamForm.cs">
@@ -183,7 +183,7 @@
     <EmbeddedResource Include="Forms\CaiDatForm.resx">
       <DependentUpon>CaiDatForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ThongKeForm.resx">
+    <EmbeddedResource Include="HoSyHuy\ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoSyHuy\QuanLySanPhamForm.resx">

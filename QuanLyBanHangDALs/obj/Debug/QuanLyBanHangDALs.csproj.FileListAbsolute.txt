@@ -7,4 +7,3 @@ E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangDTOs
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\bin\Debug\QuanLyBanHangLibraries.pdb
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.dll
 E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.pdb
-E:\Projects\Winforms\QuanLyBanHang\QuanLyBanHangDALs\obj\Debug\QuanLyBanHangDALs.csprojResolveAssemblyReference.cache

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyBanHang.Forms
+namespace QuanLyBanHang.HoSyHuy
 {
     public partial class CaiDatForm : Form
     {

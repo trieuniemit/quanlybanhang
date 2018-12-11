@@ -20,7 +20,7 @@ using QuanLyBanHangLibraries;
  *
  */
 
-namespace QuanLyBanHang.Forms
+namespace QuanLyBanHang.HoSyHuy
 {
     public partial class BanHangForm : Form
     {
@@ -160,7 +160,7 @@ namespace QuanLyBanHang.Forms
 
                 //open report viewer if check
                 if(cbExport.Checked)  {
-                    Forms.BanHangForm_InHoaDon InHoaDon = new Forms.BanHangForm_InHoaDon(order, ListProduct, CurrentUser);
+                    HoSyHuy.BanHangForm_InHoaDon InHoaDon = new HoSyHuy.BanHangForm_InHoaDon(order, ListProduct, CurrentUser);
                     InHoaDon.ShowDialog();
                 } else {
                     MessageBox.Show("Đã lưu dữ liệu của đơn hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

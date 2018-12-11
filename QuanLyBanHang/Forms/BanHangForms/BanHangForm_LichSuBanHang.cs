@@ -18,7 +18,7 @@ using QuanLyBanHangDTOs;
  *
  */
 
-namespace QuanLyBanHang.Forms
+namespace QuanLyBanHang.HoSyHuy
 {
     public partial class BanHangForm_LichSuBanHang : Form
     {
@@ -132,7 +132,7 @@ namespace QuanLyBanHang.Forms
             User currentOrderUser = donHangDaBanBul.GetOrderUser(currentOrder.Created_by);
             List<SanPham> products = donHangDaBanBul.GetProductsInOrder(currentOrder.Id);
 
-            Forms.BanHangForm_InHoaDon detailForm = new BanHangForm_InHoaDon(currentOrder, products, currentOrderUser);
+            HoSyHuy.BanHangForm_InHoaDon detailForm = new BanHangForm_InHoaDon(currentOrder, products, currentOrderUser);
             detailForm.ShowDialog();
         }
 

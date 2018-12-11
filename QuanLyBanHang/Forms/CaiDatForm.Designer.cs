@@ -1,4 +1,4 @@
-﻿namespace QuanLyBanHang.Forms
+﻿namespace QuanLyBanHang.HoSyHuy
 {
     partial class CaiDatForm
     {
